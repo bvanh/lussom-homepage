@@ -1,0 +1,39 @@
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+/* mat-sidenav-container {
+    margin-top: 50rem;
+    /* background: #ff000005; */
+.shape-top {
+  margin-top: 47rem;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.shape-top > div {
+  width: 0;
+  height: 0;
+  border-bottom: 10rem solid rgb(250, 250, 250);
+  border-right: 130rem solid transparent;
+  position: relative;
+  z-index: 5;
+}
+.shape-bottom {
+  width: 100%;
+  overflow: hidden;
+}
+.shape-bottom > div {
+  width: 0;
+  height: 0;
+  border-top: 10rem solid #fafafa;
+  border-right: 130rem solid transparent;
+  position: relative;
+  z-index: 5;
+}

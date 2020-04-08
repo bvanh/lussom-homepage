@@ -1,0 +1,34 @@
+<div class="box-container" fxLayout="column">
+  <div class="horizontal-container" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxFlex="auto">
+    <div class="vertical-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="100%">
+      <div class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex="auto">
+        <swiper *ngIf="type == 'component' && show" class="swiper-container" [config]="config" (indexChange)="onIndexChange($event)" fxFlex="auto">
+          <div *ngFor="let slide of slides" class="swiper-slide">
+            <div fxLayout="row" fxFlexFill style="background-image: url(assets/slider/slide1.jpg);background-position: center;background-size:cover;">
+              <div fxFlex='50' fxLayout='column'>
+                <h3>{{slide.title}}</h3>
+                <span>{{slide.content}}</span>
+              </div>
+            </div>
+          </div>
+        </swiper>
+        <!-- <div *ngIf="type == 'directive' && show" class="swiper-container" [swiper]="config" (indexChange)="onIndexChange($event)">
+          <div class="swiper-wrapper">
+            <div *ngFor="let slide of slides" class="swiper-slide">
+              <div fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+                {{slide}}
+              </div>
+              <img src='assets/slider/Slide.png'>
+            </div>
+          </div>
+
+          <div class="swiper-scrollbar" [hidden]="config.scrollbar === false"></div>
+          <div class="swiper-pagination" [hidden]="config.pagination === false"></div>
+
+          <div class="swiper-button-prev" [hidden]="config.navigation === false"></div>
+          <div class="swiper-button-next" [hidden]="config.navigation === false"></div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
