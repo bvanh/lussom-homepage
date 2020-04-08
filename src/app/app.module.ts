@@ -8,6 +8,7 @@ import {
   SwiperConfigInterface,
   SWIPER_CONFIG,
 } from 'ngx-swiper-wrapper';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +18,8 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { SliderComponent } from './navigation/slider/slider.component';
 import { Section2Component } from './home/section2/section2.component';
 import { Section3Component } from './home/section3/section3.component';
+import { Section4Component } from './home/section4/section4.component';
+import { FooterComponent } from './navigation/footer/footer.component';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -39,6 +42,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SliderComponent,
     Section2Component,
     Section3Component,
+    Section4Component,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +52,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FlexLayoutModule,
     RoutingModule,
     SwiperModule,
+    CarouselModule
   ],
   // providers: [
   //   {

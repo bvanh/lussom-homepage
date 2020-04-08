@@ -10,3 +10,10 @@ html, body {
 /* .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
     width: 50% !important;
 } */
+.section-title{
+    font-size: 3rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+  }
+  

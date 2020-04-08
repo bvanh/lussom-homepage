@@ -1,8 +1,5 @@
 <app-layout>
   <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
-  <div class="shape-top">
-    <div></div>
-  </div>
   <mat-sidenav-container>
       <mat-sidenav #sidenav role="navigation">
         <!--this is a place for us to add side-nav code-->
@@ -15,8 +12,5 @@
       </main>
     </mat-sidenav-content>
   </mat-sidenav-container>
-  <div class="shape-bottom">
-    <div></div>
-  </div>
-  <app-section2></app-section2>
+  <app-footer></app-footer>
 </app-layout>

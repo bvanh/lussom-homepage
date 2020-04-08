@@ -4,16 +4,18 @@ p {
 .swiper-container {
   width: 100%;
   height: 100%;
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  z-index: 1;
+  z-index: 1; */
 }
+
 .swiper-slide {
-  text-align: center;
+  overflow: hidden !important;
+  /* text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #fff; */
   /* Center slide text vertically */
-  display: -webkit-box;
+  /* display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
@@ -25,23 +27,26 @@ p {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  position: relative;
+  position: relative; */
 }
-.swiper-slide>div{
-  background-position: center;
-  background-size:cover;
-  padding: 12rem 0;
+.slide-content {
+  position: absolute;
+  top: 30%;
+  left: 10%;
 }
-.slider-pagination{
+.slider-pagination {
   position: absolute;
   bottom: 75%;
   z-index: 3;
   left: 10%;
 }
-.title-slide{
-  font-size: 5rem;
+.slide-title {
+  font-size: 4rem;
+  text-align: left;
+  width: 50%;
+  line-height: 4rem;
+  font-family: 'Source Sans Pro', sans-serif !important;
 }
-.content-slide{
+.content-slide {
   font-size: 1rem;
 }
-

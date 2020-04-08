@@ -1,3 +1,29 @@
 .sections{
-    
+    position: relative !important;
 }
+.section1{
+    position: relative;
+}
+.shape-top {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    top: -12rem;
+    z-index: 1;
+  }
+  .shape-top > div {
+    width: 0;
+    height: 0;
+    border-bottom: 18rem solid rgb(250, 250, 250);
+    border-right: 193rem solid transparent;
+    position: relative;
+    z-index: 5;
+  }
+  .section-title{
+    font-size: 3rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
