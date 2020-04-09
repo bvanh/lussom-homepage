@@ -20,4 +20,36 @@ body {
   --swiper-theme-color: red;
   --swiper-navigation-size: 44px;
 } */
-
+@media screen and (max-width: 768px) and (min-width: 415px) {
+  .slide-content[_ngcontent-iyk-c148] {
+    top: 20%;
+  }
+  .section1[_ngcontent-iyk-c152] {
+    padding: 0rem 0 0rem 0;
+  }
+  .shape-top[_ngcontent-iyk-c152] > div[_ngcontent-iyk-c152] {
+    -webkit-clip-path: polygon(0 5%, 0% 100%, 100% 100%);
+    clip-path: polygon(0 52%, 0% 100%, 100% 100%);
+  }
+  .slide-title[_ngcontent-iyk-c148] {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .slide-content2[_ngcontent-iyk-c148] {
+    font-size: 0.7rem;
+  }
+  .section-title[_ngcontent-iyk-c149] {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .section3 {
+    padding: 0;
+  }
+  .section4 > div {
+    padding: 1rem 10% 2rem;
+  }
+  .section-title[_ngcontent-iyk-c151] {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}

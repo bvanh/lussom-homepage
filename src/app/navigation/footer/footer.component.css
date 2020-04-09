@@ -19,6 +19,7 @@ mat-toolbar {
   z-index: 2;
   background: #1a80b6;
   font-weight: bold;
+  justify-content: space-between;
 }
 .coppyright {
   font-size: 1rem;
@@ -26,3 +27,8 @@ mat-toolbar {
   color: white;
   padding-left: 2rem;
 }
+@media only screen and (max-width:1024px){
+ .footer-menu{
+   display: none !important;
+ }
+} 

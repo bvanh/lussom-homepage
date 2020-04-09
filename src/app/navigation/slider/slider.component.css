@@ -13,23 +13,6 @@ p {
 
 .swiper-slide {
   overflow: hidden !important;
-  /* text-align: center;
-  font-size: 18px;
-  background: #fff; */
-  /* Center slide text vertically */
-  /* display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  position: relative; */
 }
 .slide-content {
   position: absolute;
@@ -92,7 +75,7 @@ p {
   background-image: url("../../../assets/slider/slide-active-dots.png") !important;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background: red !important;
 }
 ::ng-deep .swiper-pagination-bullet {
@@ -104,9 +87,21 @@ p {
   width: 15px !important;
   height: 15px !important;
   display: inline-block;
-  opacity: .5;
+  opacity: 0.5;
 }
 :root {
   --swiper-navigation-color: #000000;
   --swiper-pagination-color: #ffffff;
+}
+@media only screen and (max-width: 768px) and (min-width: 415px) {
+  .slide-content {
+    top: 20%;
+  }
+  .slide-title {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .slide-content2 {
+    font-size: 0.7rem;
+  }
 }

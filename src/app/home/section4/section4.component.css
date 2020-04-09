@@ -6,7 +6,7 @@
     font-family: 'Source Sans Pro', sans-serif;
     font-style: italic;
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     margin-top: 1rem;
   }
   .btn-read-more {
@@ -15,4 +15,26 @@
     height: 2.5rem;
     font-size: 1rem;
     color: white;
+  }
+  mat-card{
+    text-align: center;
+    padding: 2rem;
+    width: 24.25%;
+  }
+  .btn-read-more-job{
+    color: white;
+    width: 100%;
+    background: #1a80b6;
+  }
+  @media screen and (max-width: 768px) and (min-width: 415px) {
+    .section4 > div {
+      padding: 1rem 10% 2rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .btn-read-more-job{
+      font-size: .7rem;
+    }
   }
