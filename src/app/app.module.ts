@@ -29,7 +29,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   slidesPerView: 1,
   centeredSlides: true,
   pagination:{
-  totalClass:'dmeo'
+    type:'custom'
   }
 };
 @NgModule({
@@ -54,12 +54,12 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SwiperModule,
     //  
   ],
-  // providers: [
-  //   {
-  //     provide: SWIPER_CONFIG,
-  //     useValue: DEFAULT_SWIPER_CONFIG,
-  //   },
-  // ],
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

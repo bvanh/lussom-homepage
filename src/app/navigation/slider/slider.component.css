@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,900&display=swap");
+@import "https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.0/css/swiper.min.css";
 p {
   font-family: Lato;
 }
@@ -35,22 +36,77 @@ p {
   top: 30%;
   left: 10%;
 }
-.slider-pagination {
+.slide-pagination {
   position: absolute;
-  bottom: 75%;
-  z-index: 3;
+  top: 12%;
+  z-index: 16;
   left: 10%;
 }
 .slide-title {
   font-size: 4rem;
   text-align: left;
-  width: 50%;
+  width: 70%;
   line-height: 4rem;
   font-family: "Source Sans Pro", sans-serif !important;
   font-style: italic;
   font-weight: 900;
   color: white;
 }
-.content-slide {
-  font-size: 1rem;
+.slide-content2 {
+  color: white;
+}
+.slide-dots {
+  /* background-image: url("../../../assets/slider/slide-dots.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 8px;
+  width: 8px;
+  opacity: 1;
+  background: blue; */
+  --bullet-background: #fff;
+  --bullet-background-active: green;
+}
+.slide-dots-active {
+  --bullet-background: #fff;
+  --bullet-background-active: green;
+  /* height: 8px;
+  width: 8px;
+  opacity: 1;
+  background: red;
+  background-image: url("../../../assets/slider/slide-active-dots.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; */
+}
+/* .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border-radius: 100%;
+  background: #000;
+  opacity: .2;
+} */
+::ng-deep .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-image: url("../../../assets/slider/slide-active-dots.png") !important;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background: red !important;
+}
+::ng-deep .swiper-pagination-bullet {
+  background-image: url("../../../assets/slider/slide-dots.png") !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 15px !important;
+  height: 15px !important;
+  display: inline-block;
+  opacity: .5;
+}
+:root {
+  --swiper-navigation-color: #000000;
+  --swiper-pagination-color: #ffffff;
 }

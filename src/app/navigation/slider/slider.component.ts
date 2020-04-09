@@ -10,7 +10,7 @@ import {
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
-  styleUrls: ['./slider.component.css'],
+  styleUrls: ['./slider.component.scss'],
 })
 export class SliderComponent {
   public show: boolean = true;
@@ -41,18 +41,37 @@ export class SliderComponent {
   public type: string = 'component';
   public class: string = 'demo';
   public disabled: boolean = false;
+  // public pagination: SwiperPaginationInterface = {
+  //   el: '.slider-pagination',
+  //   clickable: true,
+  //   hideOnClick: false,
+  //   bulletClass: 'slide-dots',
+  //   bulletActiveClass: 'slide-dots-active',
+  // };
 
   public config: SwiperConfigInterface = {
     direction: 'horizontal',
     slidesPerView: 1,
+    // effect:"slide",
     keyboard: true,
     scrollbar: false,
     navigation: true,
+    slideNextClass:"dmeo",
     pagination: {
-      el: '.slider-pagination',
+      type: "bullets",
+      el: '.slide-pagination',
       clickable: true,
       hideOnClick: false,
-      // bulletClass: "slide-dots"
+      // renderBullet: function (index, className) {
+      //   return `<span class="dot">${index}</span>`;
+      // },
+      // renderCustom: function (index, className) {
+      //   return '<div class="demo">demo' + (index + 1) + '</div>';
+      // },
+
+      // bulletClass: 'slide-dots',
+      // bulletActiveClass: 'slide-dots-active',
+      // bulletElement:`<button>demo</button>`
     },
     loop: true,
   };

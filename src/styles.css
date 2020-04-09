@@ -1,19 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,600;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,600;1,400&display=swap");
 
-
-html, body { 
-    margin: 0;
-    height: 100%;
-    font-family: 'Source Sans Pro', sans-serif !important;
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Source Sans Pro", sans-serif !important;
 }
 /* .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
     width: 50% !important;
 } */
-.section-title{
-    font-size: 3rem;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-style: italic;
-    font-weight: bold;
-  }
-  
+.section-title {
+  font-size: 3rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+/* :root {
+  --swiper-theme-color: red;
+  --swiper-navigation-size: 44px;
+} */
+
