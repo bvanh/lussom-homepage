@@ -8,7 +8,7 @@ import {
   SwiperConfigInterface,
   SWIPER_CONFIG,
 } from 'ngx-swiper-wrapper';
-import { CarouselModule } from 'ngx-owl-carousel-o';
+// import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
@@ -52,7 +52,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FlexLayoutModule,
     RoutingModule,
     SwiperModule,
-    CarouselModule
+    //  
   ],
   // providers: [
   //   {
