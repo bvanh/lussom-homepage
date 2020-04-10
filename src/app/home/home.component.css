@@ -3,7 +3,7 @@
 }
 .section1 {
   position: relative;
-  padding: 1rem 0 8rem 0;
+  padding: 1rem 0 5rem 0;
 }
 .shape-top {
   position: absolute;
@@ -35,7 +35,7 @@
   font-family: "Source Sans Pro", sans-serif;
   font-style: italic;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .btn-read-more {
   background-color: #1a80b6;
@@ -46,20 +46,33 @@
 }
 .section-ellipse {
   position: relative;
-  top: -17.1rem;
+  top: -10.6rem;
   left: 45%;
   z-index: 6;
 }
 @media screen and (max-width: 768px) and (min-width: 415px) {
-  .shape-top > div{
+  .shape-top > div {
     -webkit-clip-path: polygon(0 5%, 0% 100%, 100% 100%);
     clip-path: polygon(0 52%, 0% 100%, 100% 100%);
   }
   .section1 {
     padding: 1rem 0 1rem 0;
-}
+  }
   .section-title {
     font-size: 2rem;
     margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 1440px) and (min-width: 1200px) {
+  .shape-top > div {
+    -webkit-clip-path: polygon(0 20%, 0% 100%, 100% 100%);
+    clip-path: polygon(0 20%, 0% 100%, 100% 100%);
+  }
+  .section1 {
+    padding: 1rem 0 5rem 0;
+  }
+  .section-ellipse {
+    top: -9.6rem;
+    left: 47%;
   }
 }

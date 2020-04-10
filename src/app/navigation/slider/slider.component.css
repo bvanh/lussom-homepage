@@ -28,7 +28,7 @@ p {
 .slide-title {
   font-size: 4rem;
   text-align: left;
-  width: 70%;
+  width: 60%;
   line-height: 4rem;
   font-family: "Source Sans Pro", sans-serif !important;
   font-style: italic;
@@ -37,6 +37,7 @@ p {
 }
 .slide-content2 {
   color: white;
+  width: 90%;
 }
 .slide-dots {
   /* background-image: url("../../../assets/slider/slide-dots.png");
@@ -89,11 +90,42 @@ p {
   display: inline-block;
   opacity: 0.5;
 }
+.rectange {
+  position: absolute;
+  bottom: -1px;
+  z-index: 1;
+}
 :root {
   --swiper-navigation-color: #000000;
   --swiper-pagination-color: #ffffff;
 }
-@media only screen and (max-width: 768px) and (min-width: 415px) {
+@media screen and (max-width: 1600px) and (min-width: 1261px) {
+  .slide-title {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 1261px) and (min-width: 1000px) {
+  .slide-title {
+    font-size: 2.5rem;
+    width: 80%;
+    line-height: 3rem;
+  }
+  .slide-content {
+    top: 20%;
+  }
+  .slide-content2 {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 999px) and (min-width: 787px) {
+  .slide-title {
+    width: 90%;
+  }
+  .slide-content {
+    top: 17%;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 668px) {
   .slide-content {
     top: 20%;
   }
@@ -103,5 +135,51 @@ p {
   }
   .slide-content2 {
     font-size: 0.7rem;
+  }
+}
+@media only screen and (max-width: 668px) and (min-width: 440px) {
+  .slide-content {
+    top: 19%;
+  }
+  .slide-title {
+    font-size: 1.5rem;
+    width: 75%;
+    line-height: 1.5rem;
+    margin-bottom: 8px;
+  }
+  .slide-content2 {
+    font-size: 0.5rem;
+    line-height: .5rem;
+  }
+}
+@media only screen and (max-width: 414px) and (min-width: 321px) {
+  .slide-content {
+    top: 25%;
+  }
+  .slide-title {
+    font-size: 1rem;
+    width: 75%;
+    line-height: 1rem;
+    margin-bottom: .3rem;
+  }
+  .slide-content2 {
+    font-size: 0.5rem;
+    line-height: .5rem;
+  }
+}
+@media only screen and (max-width: 321px) {
+  .slide-content {
+    top: 25%;
+    max-width: 60% !important; 
+  }
+  .slide-title {
+    font-size: 1rem;
+    width: 60%;
+    line-height: 1rem;
+    margin-bottom: .3rem;
+  }
+  .slide-content2 {
+    font-size: 0.5rem;
+    line-height: .5rem;
   }
 }
