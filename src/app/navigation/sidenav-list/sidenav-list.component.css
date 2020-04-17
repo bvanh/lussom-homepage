@@ -1,0 +1,16 @@
+.side-nav {
+  padding-top: 42px;
+}
+@media (max-width: 599px) {
+  .side-nav {
+    padding-top: 42px;
+  }
+}
+@media (min-width: 600px) {
+  .side-nav {
+    padding-top: 64px;
+  }
+}
+.mat-drawer-content {
+  overflow: visible !important;
+}

@@ -1,0 +1,33 @@
+<div style="position: relative;">
+  <ngu-carousel
+    #myCarousel
+    [inputs]="carouselConfig"
+    [dataSource]="carouselItems"
+  >
+    <div *nguCarouselDef="let item" class="item">
+      <!-- <img src='assets/slider/slide1.png' width="100%"/> -->
+      <div
+        fxFlex
+        class="slider-container"
+        style="background-image: url(assets/slider/slide1.png);"
+      >
+        <div>
+          <div>
+            <h3 class="slide-title">{{ item.title }}</h3>
+            <span class="slide-content">{{ item.content }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dots-control" NguCarouselPoint>
+      <ul class="myPoint" >
+        <li
+          *ngFor="let j of myCarousel.pointNumbers"
+          [class.active]="j == myCarousel.activePoint"
+          (click)="myCarousel.moveTo(j)"
+        ></li>
+      </ul>
+    </div>
+  </ngu-carousel>
+  <img src="assets/Rectangle.png" width="100%" class="rectangle" />
+</div>

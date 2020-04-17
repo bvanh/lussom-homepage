@@ -1,0 +1,121 @@
+.section2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.section2-content {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  max-width: 1440px;
+  font-size: 0.9rem;
+}
+.section2-content>div>img{
+  position: absolute;
+  width: 67%;
+  bottom: -100%;
+}
+.section-title {
+  font-size: 3rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+.btn-read-more {
+  background-color: #1a80b6;
+  width: 8rem !important;
+  height: 2.5rem;
+  font-size: 1rem;
+  color: white;
+}
+@media screen and (max-width: 768px) and (min-width: 415px) {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .section2-content {
+    position: absolute;
+    top: 15%;
+  }
+  .section-content {
+    font-size: 0.8rem;
+  }
+  .section2-background {
+    width: 130%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section-content {
+    font-size: 0.8rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .section2 > div > img {
+    width: 360%;
+  }
+  .section2-content {
+    top: 15%;
+  }
+  .section2-content-container {
+    order: 3 !important;
+    max-width: 90% !important;
+    margin: 0 auto;
+  }
+  .section2-content>div>img{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  .section2 > div > img {
+    width: 380%;
+  }
+  .section-content {
+    font-size: 0.8rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .section2-content {
+    top: 15%;
+  }
+  .section2-content-container {
+    order: 3 !important;
+    max-width: 90% !important;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 415px) {
+  .section2-content-container {
+    /* padding-left: 5%; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 415px) and (max-width:1440px) {
+  .section2-content {
+    margin: 0 auto;
+    max-width: 90%;
+    top:20%;
+    align-items: center;
+  }
+  .section2-content>div>img{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 10%;
+  }
+}
+@media screen and (max-width:600px) {
+  .section2-content>div>img{
+    left: 0;
+  }
+}
+/* mat-typography p{
+  margin-bottom: 1rem;;
+} */

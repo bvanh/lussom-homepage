@@ -10,7 +10,11 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
+<<<<<<< HEAD
     expect(page.getTitleText()).toEqual('lussompage app is running!');
+=======
+    expect(page.getTitleText()).toEqual('lussom-homepage app is running!');
+>>>>>>> demo
   });
 
   afterEach(async () => {
