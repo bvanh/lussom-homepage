@@ -22,13 +22,6 @@ a:active {
   .mat-toolbar-single-row {
     height: 42px;
   }
-  .logo {
-    position: relative !important;
-    left: 0 !important;
-  }
-  mat-toolbar{
-    
-  }
 }
 mat-toolbar {
   position: absolute;
@@ -38,9 +31,35 @@ mat-toolbar {
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+  padding: 0 !important;
+}
+.menu{
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  align-items: center !important;
 }
 .logo {
   position: absolute;
-  left: 2rem;
+  left: 0;
+  display: flex;
 }
-
+@media (min-width:1600px){
+  .menu{
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+@media (max-width: 960px) {
+  .logo {
+    position: relative;
+    left: 0;
+  }
+  .menu {
+    display: none !important;
+  }
+  mat-icon{
+    margin-left: 1rem;
+  }
+}

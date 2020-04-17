@@ -1,22 +1,28 @@
-<mat-toolbar fxFlexAlign="space-between">
-    <img src="assets/slider/logoLussom.png">
-    <div >
-        <span class="coppyright">Copyright ©2020 Lussom. All Rights Reserved.</span>
+<div class="footer">
+  <mat-toolbar fxFlexAlign="space-between">
+    <div fxFlex fxFlexAlign="space-between">
+      <div fxFlex="50" class="logo">
+        <img src="assets/slider/logoLussom.png" width="100%" />
+      </div>
+      <div fxFlex="50">
+        <p class="coppyright">Copyright ©2020 Lussom. All Rights Reserved.</p>
+      </div>
     </div>
-    <div fxFlex fxLayout style="justify-content: flex-end;"class='footer-menu'>
-        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-            <li>
-                <a routerLink="/owner">HOME</a>
-            </li> 
-            <li>
-                <a routerLink="/account">NEWS</a>
-            </li>
-            <li>
-              <a routerLink="/account">CARRIES</a>
-          </li>
-          <li>
-              <a routerLink="/account">CONTACT US</a>
-          </li>
-        </ul>
+    <div fxFlex fxLayout style="justify-content: flex-end;" class="footer-menu">
+      <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+        <li>
+          <a routerLink="/owner">HOME</a>
+        </li>
+        <li>
+          <a routerLink="/account">NEWS</a>
+        </li>
+        <li>
+          <a routerLink="/account">CARRIES</a>
+        </li>
+        <li>
+          <a routerLink="/account">CONTACT US</a>
+        </li>
+      </ul>
     </div>
   </mat-toolbar>
+</div>

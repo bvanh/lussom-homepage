@@ -7,8 +7,9 @@ mat-sidenav {
 mat-sidenav {
   width: 250px;
 }
-
-/* mat-sidenav-container {
-    margin-top: 50rem;
-    /* background: #ff000005; */
-
+.back-to-top-btn{
+  bottom: 70px;
+}
+.mat-drawer-content {
+  overflow:visible;
+}

@@ -20,6 +20,7 @@ import { Section2Component } from './home/section2/section2.component';
 import { Section3Component } from './home/section3/section3.component';
 import { Section4Component } from './home/section4/section4.component';
 import { FooterComponent } from './navigation/footer/footer.component';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -52,7 +53,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     FlexLayoutModule,
     RoutingModule,
     SwiperModule,
-    NguCarouselModule
+    NguCarouselModule,
+    NgxScrollTopModule
     //  
   ],
   providers: [

@@ -1,9 +1,17 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .sections {
   position: relative !important;
 }
+p {
+  font-family: "Roboto", sans-serif;
+}
 .section1 {
   position: relative;
-  padding: 1rem 0 5rem 0;
+  padding: 1rem 0 1rem 0;
+  margin: 0 auto 10rem;
+  max-width: 1440px;
+  height: 50rem;
 }
 .shape-top {
   position: absolute;
@@ -23,19 +31,20 @@
     #a48d01 100%
   );
 }
-.shape-top > div {
-  width: 110%;
-  height: 200px;
-  background: #fafafa;
-  -webkit-clip-path: polygon(0 5%, 0% 100%, 100% 100%);
-  clip-path: polygon(0 0%, 0% 100%, 100% 100%);
+.frame-img {
+  /* position: relative; */
+}
+.frame-img > img {
+  position: absolute;
+  width: 75%;
+  left: -20rem;
 }
 .section-title {
   font-size: 3rem;
   font-family: "Source Sans Pro", sans-serif;
   font-style: italic;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .btn-read-more {
   background-color: #1a80b6;
@@ -50,24 +59,53 @@
   left: 45%;
   z-index: 6;
 }
-@media screen and (max-width: 768px) and (min-width: 415px) {
-  .shape-top > div {
-    -webkit-clip-path: polygon(0 5%, 0% 100%, 100% 100%);
-    clip-path: polygon(0 52%, 0% 100%, 100% 100%);
-  }
+@media screen and (max-width: 767px) {
   .section1 {
-    padding: 1rem 0 1rem 0;
+    margin: 0;
+    height: 41rem;
+    align-items: center;
+  }
+  .section1 > div:first-child {
+    padding: 0 0 3rem 0;
+  }
+  .section1-content {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
   }
   .section-title {
     font-size: 2rem;
+  }
+  .frame-img > img {
+    position: relative;
+    width: 100%;
+    left: 0;
+  }
+}
+@media screen and (min-width: 767px) and (max-width:1440px) {
+  .section1 {
+    margin: 0 auto;
+    height: 35rem;
+    max-width: 90%;
+  }
+  .section1 > div:first-child {
+    padding: 0 0 3rem 0;
+    display: flex;
+    align-items: center;
+  }
+  .section1-content {
+    /* font-size: 0.8rem; */
     margin-bottom: 1rem;
+  }
+  .section-title {
+    font-size: 3rem;
+  }
+  .frame-img > img {
+    position: relative;
+    width: 100%;
+    left: 0;
   }
 }
 @media screen and (max-width: 1440px) and (min-width: 1200px) {
-  .shape-top > div {
-    -webkit-clip-path: polygon(0 20%, 0% 100%, 100% 100%);
-    clip-path: polygon(0 20%, 0% 100%, 100% 100%);
-  }
   .section1 {
     padding: 1rem 0 5rem 0;
   }
@@ -76,3 +114,9 @@
     left: 47%;
   }
 }
+@media (max-width: 414px) {
+  .section1 {
+    height: 41rem;
+  }
+}
+

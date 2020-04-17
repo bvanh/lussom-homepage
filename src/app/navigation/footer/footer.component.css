@@ -14,21 +14,61 @@ a:active {
   padding: 0;
   margin: 0;
 }
-mat-toolbar {
-  position: relative;
-  z-index: 2;
+.footer {
   background: #1a80b6;
-  font-weight: bold;
-  justify-content: space-between;
 }
+mat-toolbar {
+  z-index: 2;
+  max-width: 1440px;
+  background: #1a80b6;
+  margin: 0 auto;
+  font-weight: bold;
+}
+/* mat-toolbar>div{
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+} */
 .coppyright {
   font-size: 1rem;
   font-weight: lighter;
   color: white;
   padding-left: 2rem;
 }
-@media only screen and (max-width:1024px){
- .footer-menu{
-   display: none !important;
- }
-} 
+@media only screen and (max-width: 1440px) {
+  mat-toolbar{
+    width: 90%;
+    margin: 0 auto  ;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .footer-menu {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 600px) and (min-width: 321px) {
+  .coppyright {
+    font-size: 0.7rem;
+  }
+  .logo {
+    max-width: 25% !important;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .logo {
+    max-width: 15% !important;
+  }
+  .footer-menu {
+    /* margin-right: 2rem; */
+  }
+}
+@media only screen and (max-width: 320px) {
+  .logo {
+    max-width: 18% !important;
+  }
+  .coppyright {
+    font-size: 0.7rem;
+    padding-left: 1rem;
+  }
+}

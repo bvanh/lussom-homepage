@@ -1,26 +1,29 @@
 <mat-toolbar>
-  <div fxHide.gt-xs>
-      <button mat-icon-button (click)="onToggleSidenav()">
-          <mat-icon>menu</mat-icon>
-      </button>
+  <div fxHide.gt-sm>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
   </div>
-  <div class="logo" style="text-align: right;">
-      <img src="assets/slider/logoLussom.png" width="75%">
+  <div class="logo" style="text-align: right;" fxHide.gt-sm>
+    <img src="assets/slider/logoLussom.png" width="75%" />
   </div>
-  <div fxFlex fxLayout fxLayoutAlign="center" fxHide.xs>
-      <ul fxLayout fxLayoutGap="20px" class="navigation-items">
-          <li>
-              <a routerLink="/owner">HOME</a>
-          </li>
-          <li>
-              <a routerLink="/account">NEWS</a>
-          </li>
-          <li>
-            <a routerLink="/account">CARRIES</a>
-        </li>
-        <li>
-            <a routerLink="/account">CONTACT US</a>
-        </li>
-      </ul>
+  <div fxFlex fxLayout fxLayoutAlign="center" fxHide.lt-sm class="menu">
+    <div class="logo" style="text-align: right;">
+      <img src="assets/slider/logoLussom.png" width="75%" />
+    </div>
+    <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+      <li>
+        <a routerLink="/owner">HOME</a>
+      </li>
+      <li>
+        <a routerLink="/account">NEWS</a>
+      </li>
+      <li>
+        <a routerLink="/account">CARRIES</a>
+      </li>
+      <li>
+        <a routerLink="/account">CONTACT US</a>
+      </li>
+    </ul>
   </div>
 </mat-toolbar>
