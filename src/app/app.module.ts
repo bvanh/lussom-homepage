@@ -21,6 +21,9 @@ import { Section3Component } from './home/section3/section3.component';
 import { Section4Component } from './home/section4/section4.component';
 import { FooterComponent } from './navigation/footer/footer.component';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { NewsComponent } from './news/news/news.component';
+import { DetailComponent } from './news/detail/detail.component';
+import { NewsService } from './services/news.service';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   observer: true,
@@ -29,9 +32,9 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   spaceBetween: 5,
   slidesPerView: 1,
   centeredSlides: true,
-  pagination:{
-    type:'custom'
-  }
+  pagination: {
+    type: 'custom',
+  },
 };
 @NgModule({
   declarations: [
@@ -45,6 +48,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     Section3Component,
     Section4Component,
     FooterComponent,
+    NewsComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,15 +59,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     RoutingModule,
     SwiperModule,
     NguCarouselModule,
-    NgxScrollTopModule
-    //  
+    NgxScrollTopModule,
+    //
   ],
-  providers: [
-    {
-      provide: SWIPER_CONFIG,
-      useValue: DEFAULT_SWIPER_CONFIG,
-    },
-  ],
+  providers: [NewsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
