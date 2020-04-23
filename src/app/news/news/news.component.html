@@ -7,3 +7,6 @@
   </p>
 </div>
 </div>
+<div *ngFor="let item of news">
+  <a routerLink="/news/detail/{{item.id}}">{{item.name}}</a>
+</div>

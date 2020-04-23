@@ -1,1 +1,4 @@
-<p>detail works!</p>
+<p>{{ newsDetail.id }}</p>
+<div *ngFor="let item of news">
+  <a (click)="getNewsFromRoute(item.id)">{{ item.name }}</a>
+</div>

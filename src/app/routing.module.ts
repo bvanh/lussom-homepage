@@ -1,10 +1,11 @@
-import { DetailComponent } from './news/detail/detail.component';
-import { NewsComponent } from './news/news/news.component';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { DetailComponent } from './news/detail/detail.component';
+import { NewsComponent } from './news/news/news.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/news', pathMatch: 'full' },
