@@ -24,18 +24,8 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NewsComponent } from './news/news/news.component';
 import { DetailComponent } from './news/detail/detail.component';
 import { NewsService } from './services/news.service';
+import {HttpClientModule} from '@angular/common/http'
 
-const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
-  observer: true,
-  direction: 'horizontal',
-  threshold: 50,
-  spaceBetween: 5,
-  slidesPerView: 1,
-  centeredSlides: true,
-  pagination: {
-    type: 'custom',
-  },
-};
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +50,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     SwiperModule,
     NguCarouselModule,
     NgxScrollTopModule,
+    HttpClientModule
     //
   ],
   providers: [NewsService],
