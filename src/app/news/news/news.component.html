@@ -1,12 +1,24 @@
-<div class="header">
+<div class="news-container">
+  <div class="header">
     <div>
-  <h2>NEWS</h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
-  </p>
-</div>
-</div>
-<div *ngFor="let item of news">
-  <a routerLink="/news/detail/{{item.id}}">{{item.name}}</a>
+      <h2>NEWS</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+  </div>
+  <div class="list-news" fxFlex="auto">
+    <div *ngFor="let item of news" fxFlex.gt-sm="25%">
+      <img [src]="item.thumbnail" width="100%" />
+      <a routerLink="/news/detail/{{ item.id }}">{{ item.name }}</a>
+      <p class="short-content">{{ item.shortContent }}</p>
+      <div class="news-footer">
+        <div class="news-footer-date"fxFlex=50%>
+          {{ item.created_at | date: "yyyy-MM-dd" }}
+        </div>
+        <div class="news-footer-readmore" fxFlex=50%> Read more</div>
+      </div>
+    </div>
+  </div>
 </div>

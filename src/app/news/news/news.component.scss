@@ -1,3 +1,8 @@
+.news-container{
+  max-width: 1440px;
+  flex-direction: column;
+
+}
 .header {
   background-image: url(../../../assets/news/background_header.png);
   background-position: center;
@@ -24,5 +29,10 @@
   }
   & p{
       color:white;
+  }
+}
+.list-news{
+  & div{
+    padding: 1rem;
   }
 }
