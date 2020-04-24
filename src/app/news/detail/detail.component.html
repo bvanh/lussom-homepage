@@ -1,4 +1,9 @@
-<p>{{ newsDetail.id }}</p>
+<div fxLayout="row wrap" class="news-detail-content">
+  <div fxFlex="70%" fxLayout="column" [innerHTML]="newsDetail.content">
+    <!-- <span innerHTML="{{ item.content }}"></span> -->
+  </div>
+  <div fxFlex="30%"></div>
+</div>
 <div *ngFor="let item of news">
   <a (click)="getNewsFromRoute(item.id)">{{ item.name }}</a>
 </div>

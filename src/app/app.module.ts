@@ -4,9 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 import {
-  SwiperModule,
-  SwiperConfigInterface,
-  SWIPER_CONFIG,
+  SwiperModule
 } from 'ngx-swiper-wrapper';
 import { NguCarouselModule } from '@ngu/carousel';
 import { AppComponent } from './app.component';
@@ -25,6 +23,7 @@ import { NewsComponent } from './news/news/news.component';
 import { DetailComponent } from './news/detail/detail.component';
 import { NewsService } from './services/news.service';
 import {HttpClientModule} from '@angular/common/http'
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -50,7 +49,8 @@ import {HttpClientModule} from '@angular/common/http'
     SwiperModule,
     NguCarouselModule,
     NgxScrollTopModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
     //
   ],
   providers: [NewsService],

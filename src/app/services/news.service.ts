@@ -15,20 +15,16 @@ import { api } from './api';
 export class NewsService {
   constructor(private http: HttpClient) {}
   getNews(apiNews): Observable<News[]> {
-    // this.messageService.add(`${ new Date().toLocaleString()}. Get movie list`);
-    // return of(fakeMovies);
-    return this.http.get<News[]>(apiNews).pipe(
-      // tap((receivedMovies) =>
-      //   // console.log(`receivedMovies = ${JSON.stringify(receivedMovies)}`)
-      // ),
-      catchError((error) => of([]))
-    );
+    return this.http.get<News[]>(apiNews).pipe(catchError((error) => of([])));
+  }
+  getNewsCount(apiNews) {
+    return this.http.get(apiNews).pipe(catchError((error) => of([])));
   }
   getNewsFromId(id: Number): Observable<News[]> {
     const url = `${api.API_NEWS}/${id}`;
     return this.http.get<News[]>(url).pipe(
       tap((dataDetail) => {
-        console.log(dataDetail)
+        console.log(dataDetail);
         // this.getNews(dataDetail.categories[0].id)
       }),
       catchError((error) => of([]))

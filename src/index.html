@@ -1,15 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Lussom</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
-</head>
-<body class="mat-typography">
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Lussom</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .pagination-items /deep/ .ngx-pagination .current {
+        margin: 0 1rem !important;
+        border-radius: 100%;
+        background: #2199e8;
+        color: #fefefe;
+        cursor: default;
+      }
+      .pagination-items /deep/ .ngx-pagination a {
+        outline: none;
+      }
+      .pagination-items /deep/ .ngx-pagination a:hover,
+      .ngx-pagination button:hover {
+        background: none;
+      }
+      .news-detail-content /deep/ img{
+    width: 100% !important; 
+  }
+    </style>
+  </head>
+  <body class="mat-typography">
+    <app-root></app-root>
+  </body>
 </html>

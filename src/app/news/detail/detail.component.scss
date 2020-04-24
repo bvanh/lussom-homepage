@@ -1,0 +1,10 @@
+.news-detail-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  & .news-detail-content>div>div>img{
+    width: 100% !important; 
+  }
+}
+// img {
+//   width: 100% !important;
+// }
