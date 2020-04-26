@@ -1,0 +1,43 @@
+<div class="news-header">
+  <div>
+    <h2>CARRIES</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+</div>
+
+<div fxLayout="row wrap" class="detail-container">
+  <div fxFlex="70%" style="padding: 0 1rem;">
+    <h2>Why should you apply for this position</h2>
+    <div [innerHTML]="jobsDetail.reason"></div>
+    <h2>Jobs Description</h2>
+    <div [innerHTML]="jobsDetail.description"></div>
+    <h2>Your Skill and Experience</h2>
+    <div [innerHTML]="jobsDetail.skill"></div>
+    <h2>More Jobs For You</h2>
+    <div class="jobs-relate" *ngFor="let item of jobs">
+      <h3
+        (click)="getJobsFromRoute(item.id)"
+        routerLink="/jobs/detail/{{ item.id }}"
+      >
+        {{ item.title }}
+      </h3>
+      <span>{{ item.expried }}</span>
+    </div>
+  </div>
+  <div fxFlex="30%" style="padding: 0 1rem;">
+    <h2>{{ jobsDetail.title }}</h2>
+    <div class="salary">
+      <img src="../../../assets/detail/salary-icon.png" />
+      <h3>Salary:</h3>
+      {{ jobsDetail.salary }}
+    </div>
+    <div class="location">
+      <img src="../../../assets/detail/location-icon.png" />
+      <h3>Address:</h3>
+      {{ jobsDetail.location }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,900&display=swap");
+.news-container {
+  flex-direction: column;
+}
+$screen-xl-min: 1500px;
+.table-jobs {
+  max-width: 90%;
+  margin: 0 auto;
+  background: #fafafa;
+  @media (min-width: #{$screen-xl-min}) {
+    max-width: 1440px;
+  }
+}
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  padding: 8px;
+  border-bottom-width: 8px;
+  border-bottom-color: #fafafa;
+}
+

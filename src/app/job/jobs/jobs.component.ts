@@ -1,25 +1,27 @@
 import { ActivatedRoute } from '@angular/router';
-import { NewsService } from './../../services/news.service';
+import { JobsService } from './../../services/job.service';
 import { Component, OnInit } from '@angular/core';
-import { News } from '../../../models/news';
+import { Jobs } from '../../../models/jobs';
 import { api } from '../../services/api';
+
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss'],
+  selector: 'app-jobs',
+  templateUrl: './jobs.component.html',
+  styleUrls: ['./jobs.component.scss'],
 })
-export class NewsComponent implements OnInit {
-  news: News[];
+export class JobsComponent implements OnInit {
+  jobs: Jobs[];
   currentPage = 0;
   positionItem = 0;
   count = null;
+  displayedColumns: string[] = ['title', 'categories', 'location', 'date'];
   constructor(
-    private newsService: NewsService,
+    private jobsService: JobsService,
     private route: ActivatedRoute
   ) {}
   public search = this.route.snapshot.paramMap.get('id');
   // public filter = this.route.snapshot.url[1].path;
-  getNewsFromServices(currentPage): void {
+  getJobsFromServices(currentPage): void {
     // if (this.filter === 'filter') {
     //   this.newsService
     //     .getNews(
@@ -29,34 +31,36 @@ export class NewsComponent implements OnInit {
     //       this.news = data;
     //     });
     // } else {
-      this.newsService
-        .getNews(`${api.API_ROOT}/news?_limit=10&_start=${currentPage}`)
-        .subscribe((data: any[]) => {
-          // console.log(data);
-          this.news = data;
-        });
-    
+    this.jobsService
+      .getJobs(`${api.API_ROOT}/jobs?_limit=10&_start=${currentPage}`)
+      .subscribe((data: any[]) => {
+        console.log(data);
+        this.jobs = data;
+      });
   }
   getNewsCount(): void {
-    this.newsService
-      .getNewsCount(`${api.API_NEWS_COUNT}`)
+    this.jobsService
+      .getJobsCount(`${api.API_NEWS_COUNT}`)
       .subscribe((data: any[]) => {
         this.count = data;
       });
   }
   async getPage(e) {
     if (e > this.currentPage) {
-      this.getNewsFromServices(this.positionItem + 4);
+      this.getJobsFromServices(this.positionItem + 4);
       this.currentPage = e;
       this.positionItem += 4;
     } else {
-      this.getNewsFromServices(this.positionItem - 4);
+      this.getJobsFromServices(this.positionItem - 4);
       this.currentPage = e;
       this.positionItem -= 4;
     }
   }
+  demo(e): void {
+    console.log(e);
+  }
   ngOnInit(): void {
-    this.getNewsFromServices(this.currentPage);
+    this.getJobsFromServices(this.currentPage);
     this.getNewsCount();
   }
 }

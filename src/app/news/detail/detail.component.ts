@@ -11,38 +11,52 @@ import { api } from '../../services/api';
   styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
-  news: News[];
+  newsByCategories: News[];
+  news:News[]
   newsDetail = {
     id: 1,
     name: '',
     shortContent: '',
     content: '',
+    thumbnail:"",
+    created_at:null,
     categories: [
       {
         id: 1,
+        name:""
       },
     ],
   };
   constructor(
     private route: ActivatedRoute,
-    private newsSerive: NewsService,
+    private newsService: NewsService,
     private location: Location
   ) {}
   public id = +this.route.snapshot.paramMap.get('id');
   getNewsFromRoute(newsId): void {
-    this.newsSerive.getNewsFromId(newsId).subscribe((data: any) => {
+    this.newsService.getNewsFromId(newsId).subscribe((data: any) => {
       this.newsDetail = data;
-      this.newsSerive
+      this.newsService
         .getNews(`${api.API_CATEGORIES}/${data.categories[0].id}`)
-        .subscribe((data: any) => {(this.news = data.news)
-        console.log(data)
+        .subscribe((data: any) => {
+          this.newsByCategories = data.news;
+          console.log(data);
         });
     });
+  }
+  getNewsFromServices(): void {
+    this.newsService
+      .getNews(`${api.API_ROOT}/news?_limit=5&_start=0`)
+      .subscribe((data: any[]) => {
+        this.news = data;
+        console.log(data)
+      });
   }
   goBack(): void {
     this.location.back();
   }
   ngOnInit(): void {
     this.getNewsFromRoute(this.id);
+    this.getNewsFromServices();
   }
 }

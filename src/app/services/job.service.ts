@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { News } from '../../models/news';
+import { Jobs } from '../../models/jobs';
 
 //Get data asynchronously with Observable
 import { Observable } from 'rxjs';
@@ -12,20 +12,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { api } from './api';
 
 @Injectable()
-export class NewsService {
+export class JobsService {
   constructor(private http: HttpClient) {}
-  getNews(apiNews): Observable<News[]> {
-    return this.http.get<News[]>(apiNews).pipe(catchError((error) => of([])));
+  getJobs(apiJobs): Observable<Jobs[]> {
+    return this.http.get<Jobs[]>(apiJobs).pipe(catchError((error) => of([])));
   }
-  getNewsCount(apiNews) {
-    return this.http.get(apiNews).pipe(catchError((error) => of([])));
+  getJobsCount(apiJobs) {
+    return this.http.get(apiJobs).pipe(catchError((error) => of([])));
   }
-  getNewsFromId(id: Number): Observable<News[]> {
-    const url = `${api.API_ROOT}/news/${id}`;
-    return this.http.get<News[]>(url).pipe(
+  getJobsFromId(id: Number): Observable<Jobs[]> {
+    const url = `${api.API_ROOT}/jobs/${id}`;
+    return this.http.get<Jobs[]>(url).pipe(
       tap((dataDetail) => {
         console.log(dataDetail);
-        // this.getNews(dataDetail.categories[0].id)
+        // this.getJobs(dataDetail.categories[0].id)
       }),
       catchError((error) => of([]))
     );

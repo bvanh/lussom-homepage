@@ -1,9 +1,74 @@
-<div fxLayout="row wrap" class="news-detail-content">
-  <div fxFlex="70%" fxLayout="column" [innerHTML]="newsDetail.content">
-    <!-- <span innerHTML="{{ item.content }}"></span> -->
+<div class="news-header">
+  <div>
+    <h2>NEWS</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
   </div>
-  <div fxFlex="30%"></div>
 </div>
-<div *ngFor="let item of news">
-  <a (click)="getNewsFromRoute(item.id)">{{ item.name }}</a>
+<div fxLayout="row wrap" class="detail-container">
+  <div class="news-detail-title">
+    <h2>
+      {{ newsDetail.name }}
+    </h2>
+    <span>{{ newsDetail.created_at | date: "dd-MM-yyyy" }}</span>
+    <div
+      class="news-detail-thumbnail"
+      [ngStyle]="{ 'background-image': 'url(' + newsDetail.thumbnail + ')' }"
+    ></div>
+    <!-- <img [src]="newsDetail.thumbnail" /> -->
+  </div>
+  <div fxFlex="67%">
+    <div fxLayout="column" [innerHTML]="newsDetail.content"></div>
+    <div class="tags-container">
+      <span class="tags">
+        <span></span>
+        Tags
+      </span>
+      <span class="tags-name">{{ newsDetail.categories[0].name }}</span>
+    </div>
+    <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=large&appId=630380541117442&width=77&height=28" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    <h2>Bài viết liên quan</h2>
+    <div class="news-relate" fxLayout="row wrap">
+      <div
+        *ngFor="let item of newsByCategories; index as i"
+        fxFlex.gt-sm="50%"
+        style="padding: 0.5rem;"
+      >
+        <div
+          class="news-relate-items"
+          *ngIf="i < 4"
+          [ngStyle]="{ 'background-image': 'url(' + item.thumbnail + ')' }"
+        >
+          <h3
+            (click)="getNewsFromRoute(item.id)"
+            routerLink="/news/detail/{{ item.id }}"
+          >
+            {{ item.name }}
+          </h3>
+          <span class="news-date">{{
+            item.created_at | date: "dd-MM-yyyy"
+          }}</span>
+        </div>
+        <!-- <img *ngIf="i < 4" [src]="item.thumbnail" width="100%" /> -->
+        <!-- <a (click)="getNewsFromRoute(item.id)" *ngIf="i < 4">{{ item.name }}</a> -->
+      </div>
+    </div>
+  </div>
+  <div fxFlex="29%" style="padding: 0 1rem;">
+    <h2>Bài viết gần đây</h2>
+    <div *ngFor="let item of news">
+      <div class="news-newest" fxFlex="row">
+        <img [src]="item.thumbnail" width="30%" />
+        <div
+          style="width: 70%;"
+          (click)="getNewsFromRoute(item.id)"
+          routerLink="/news/detail/{{ item.id }}"
+        >
+          {{ item.name }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

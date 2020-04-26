@@ -1,3 +1,4 @@
+import { JobsService } from './services/job.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,6 +25,9 @@ import { DetailComponent } from './news/detail/detail.component';
 import { NewsService } from './services/news.service';
 import {HttpClientModule} from '@angular/common/http'
 import {NgxPaginationModule} from 'ngx-pagination';
+import { JobsComponent } from './job/jobs/jobs.component';
+import { JobDetailComponent } from './job/job-detail/job-detail.component';
+import { ContactComponent } from './contact/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +43,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     FooterComponent,
     NewsComponent,
     DetailComponent,
+    JobsComponent,
+    JobDetailComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +60,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     NgxPaginationModule
     //
   ],
-  providers: [NewsService],
+  providers: [NewsService,JobsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

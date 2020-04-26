@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -19,21 +18,24 @@ $lussom-homepage-accent: mat-palette($mat-pink, A200, A100, A400);
 $lussom-homepage-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$lussom-homepage-theme: mat-light-theme($lussom-homepage-primary, $lussom-homepage-accent, $lussom-homepage-warn);
+$lussom-homepage-theme: mat-light-theme(
+  $lussom-homepage-primary,
+  $lussom-homepage-accent,
+  $lussom-homepage-warn
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($lussom-homepage-theme);
 
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // @import "styles-variables";
 
-@import '~bootstrap/scss/bootstrap-reboot';
-@import '~bootstrap/scss/bootstrap-grid';
+@import "~bootstrap/scss/bootstrap-reboot";
+@import "~bootstrap/scss/bootstrap-grid";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -51,24 +53,66 @@ $lussom-homepage-accent: mat-palette($mat-pink, A200, A100, A400);
 $lussom-homepage-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$lussom-homepage-theme: mat-light-theme($lussom-homepage-primary, $lussom-homepage-accent, $lussom-homepage-warn);
+$lussom-homepage-theme: mat-light-theme(
+  $lussom-homepage-primary,
+  $lussom-homepage-accent,
+  $lussom-homepage-warn
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 // @include angular-material-theme($lussom-homepage-theme);
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,600;0,700;1,200;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,600;0,700;1,200;1,400;1,700&display=swap");
 
 /* You can add global styles to this file, and also import other style files */
 // @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 // @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-);
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.news-header {
+  background-image: url(assets/news/background_header.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 55vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 90%;
+  }
+  & h2 {
+    color: white;
+    font-family: "Source Sans Pro", unset;
+    letter-spacing: 0.1rem;
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: bolder;
+  }
+  & p {
+    color: white;
+  }
+}
+$screen-xl-min: 1500px;
+.detail-container {
+  max-width: 90%;
+  margin: 0 auto;
+  @media (min-width: #{$screen-xl-min}) {
+    max-width: 1440px;
+  }
+  & .news-detail-content > div > div > img {
+    width: 100% !important;
+  }
+}
