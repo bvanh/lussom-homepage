@@ -1,6 +1,6 @@
 <div class="news-header">
   <div>
-    <h2>CARRIES</h2>
+    <h2>CAREERS</h2>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua.
@@ -16,15 +16,66 @@
     <div [innerHTML]="jobsDetail.description"></div>
     <h2>Your Skill and Experience</h2>
     <div [innerHTML]="jobsDetail.skill"></div>
+    <div class="form-apply">
+      <span
+       class="input-cv"
+        >Full name*
+        <input
+          
+          placeholder="Your name"
+          name="name"
+          required
+          (keyup)="getCv($event)"
+      /></span>
+      <span
+      class="input-cv"
+        >Email*
+        <input
+          
+          placeholder="Your Email"
+          type="email"
+          name="email"
+          (keyup)="getCv($event)"
+          required
+      /></span>
+      <span
+      class="input-cv"
+        >Phone Number*
+        <input
+          class="input-cv"
+          placeholder="Your number"
+          name="phone"
+          type="number"
+          (keyup)="getCv($event)"
+          required
+      /></span>
+      <span
+      class="attact-cv"
+        >Resume/CV*
+        <!-- <label for="cv"><img src='../../../assets/detail/attact-cv.png'/></label> -->
+        <input
+          placeholder="Your CV"
+          id="cv"
+          type="file"
+          name="cv"
+          accept=".pdf, .docx"
+          (change)="onFileChange($event)"
+      /></span>
+      <div class="submit-btn">
+        <button (click)="onSubmitCv()" class="submit-btn-ok">Submit Now</button>
+        <button (click)="onSubmitCv()" class="submit-btn-cancel">Clear</button>
+      </div>
+    </div>
     <h2>More Jobs For You</h2>
     <div class="jobs-relate" *ngFor="let item of jobs">
-      <h3
+      <span
         (click)="getJobsFromRoute(item.id)"
-        routerLink="/jobs/detail/{{ item.id }}"
+        routerLink="/careers/detail/{{ item.id }}"
+        class="title"
       >
         {{ item.title }}
-      </h3>
-      <span>{{ item.expried }}</span>
+      </span>
+      <span style="padding-left: 1rem; border-left: 1px solid #b5b5b5;">{{ item.expried }}</span>
     </div>
   </div>
   <div fxFlex="30%" style="padding: 0 1rem;">

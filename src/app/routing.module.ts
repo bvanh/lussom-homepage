@@ -10,13 +10,13 @@ import { JobsComponent } from './job/jobs/jobs.component';
 import { JobDetailComponent } from './job/job-detail/job-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/contact', pathMatch: 'full' },
+  { path: '', redirectTo: '/careers', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'news', component: NewsComponent },
   { path: 'news/detail/:id', component: DetailComponent },
-  { path: 'jobs', component: JobsComponent },
-  { path: 'jobs/detail/:id', component: JobDetailComponent },
+  { path: 'careers', component: JobsComponent },
+  { path: 'careers/detail/:id', component: JobDetailComponent },
   // { path: 'news/filter/:id', component: NewsComponent },
 ];
 

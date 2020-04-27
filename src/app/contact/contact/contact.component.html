@@ -1,64 +1,67 @@
-<div class="news-container">
-  <div class="news-header">
-    <div>
-      <h2>CONTACT US</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-    </div>
+<div class="news-header">
+  <div>
+    <h2>CONTACT US</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
   </div>
-  <div fxLayout="row wrap">
-    <div fxFlex="50%">
-      <h2>HAVE A QUESTION? SEND US!</h2>
-      <p>
-        For game support, general questions, advertising requests and other
-        inquires, please use form below to send us your meassage.
-      </p>
-      <h2>LUSSOM INFO</h2>
-      <p>Website: lussom.vn</p>
-      <p>
-        Address: 4thFloor, Eurowindow Multi Complex, 27 Tran Duy Hung, Cau Giay
-        district, Ha Noi City.
-      </p>
-      <p>Email: contact@lussom.vn</p>
-      <p>Tel: +84 243 221 6272</p>
-    </div>
-    <div fxFlex="50%">
-      <form>
-        <mat-form-field>
-          <input matInput placeholder="Your name" />
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Email Address" />
-          <mat-error
-            *ngIf="
-              emailFormControl.hasError('email') &&
-              !emailFormControl.hasError('required')
-            "
-          >
-            Please enter a valid email address
-          </mat-error>
-          <mat-error *ngIf="emailFormControl.hasError('required')">
-            Email is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <textarea matInput placeholder="Your meassage..."></textarea>
-        </mat-form-field>
-        <button mat-raised-button color="primary">Primary</button>
-      </form>
-    </div>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4779785539677!2d105.80139841403287!3d21.013552586006618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5fe4a55881%3A0x25e65dfc96ed032e!2sEurowindow%20Multi-Complex!5e0!3m2!1svi!2s!4v1587943617493!5m2!1svi!2s"
-      width="100%"
-      height="450"
-      frameborder="0"
-      style="border: 0;"
-      allowfullscreen=""
-      aria-hidden="false"
-      tabindex="0"
-      class="iframe-map"
-    ></iframe>
+</div>
+<div fxLayout="row wrap" class="detail-container">
+  <div fxFlex="50%">
+    <h2>HAVE A QUESTION? SEND US!</h2>
+    <p>
+      For game support, general questions, advertising requests and other
+      inquires, please use form below to send us your meassage.
+    </p>
+    <h2>LUSSOM INFO</h2>
+    <p>Website: lussom.vn</p>
+    <p>
+      Address: 4thFloor, Eurowindow Multi Complex, 27 Tran Duy Hung, Cau Giay
+      district, Ha Noi City.
+    </p>
+    <p>Email: contact@lussom.vn</p>
+    <p>Tel: +84 243 221 6272</p>
   </div>
+  <div fxFlex="50%" class="input-feedback">
+    <input placeholder="Your name" />
+    <input placeholder="Your email" />
+    <textarea rows="4" cols="50" placeholder="Describe yourself here...">
+    </textarea>
+    <button class="btn-submit-feedback">Submit</button>
+    <!-- <form>
+      <mat-form-field>
+        <input matInput placeholder="Your name" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email Address" />
+        <mat-error
+          *ngIf="
+            emailFormControl.hasError('email') &&
+            !emailFormControl.hasError('required')
+          "
+        >
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Your meassage..."></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Primary</button>
+    </form> -->
+  </div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.4779785539677!2d105.80139841403287!3d21.013552586006618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5fe4a55881%3A0x25e65dfc96ed032e!2sEurowindow%20Multi-Complex!5e0!3m2!1svi!2s!4v1587943617493!5m2!1svi!2s"
+    width="100%"
+    height="450"
+    frameborder="0"
+    style="border: 0;"
+    allowfullscreen=""
+    aria-hidden="false"
+    tabindex="0"
+    class="iframe-map"
+  ></iframe>
 </div>

@@ -1,0 +1,64 @@
+.form-apply {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.input-cv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+  height: 2rem;
+  & input {
+    border-radius: 16px;
+    border: 1px solid #d0cdcd;
+    padding: 0.2rem 1rem;
+    width: 50%;
+    outline: none;
+  }
+}
+.attact-cv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .submit-btn-ok {
+    background: #ffc50e;
+    border: 1px solid #fafafa;
+    border-radius: 24px;
+    height: 2.2rem;
+    width: 30%;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+  }
+  & .submit-btn-cancel {
+    background: #d7d7d7;
+    border: 1px solid #fafafa;
+    border-radius: 24px;
+    height: 2.2rem;
+    width: 30%;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+  }
+}
+.jobs-relate {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  & .title {
+    color: #2c7da9;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}

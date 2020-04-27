@@ -1,3 +1,29 @@
-.iframe-map{
+.iframe-map {
+  margin-bottom: 1rem;
+}
+.input-feedback {
+  display: flex;
+  flex-direction: column;
+  & input {
+    background: #eae7e7;
+    border-radius: 5px;
+    border: 1px;
+    padding: 0.5rem 1rem;
     margin-bottom: 1rem;
+  }
+  & textarea{
+    background: #eae7e7;
+    border: 1px;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+  }
+  & .btn-submit-feedback{
+    width: 100%;
+    border: 1px;
+    background: #1a80b6;
+    padding: .5rem;
+    border-radius: 24px;
+    margin-top: 1rem;
+   
+  }
 }

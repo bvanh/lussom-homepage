@@ -11,3 +11,10 @@ export class Jobs {
   categories: String;
   vacancies: Number;
 }
+export class applications {
+  id: Number;
+  name: String;
+  email: String;
+  phone: String;
+  file: String;
+}

@@ -8,22 +8,41 @@
       </p>
     </div>
   </div>
-  <table mat-table [dataSource]="jobs" class="table-jobs">
+  <table mat-table [dataSource]="jobs" class="table-jobs gfg">
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef>Title</th>
-      <td mat-cell *matCellDef="let element" routerLink="/jobs/detail/{{ element.id }}">{{ element.title }}</td>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        routerLink="/careers/detail/{{ element.id }}"
+        class="geeks"
+        style="cursor: pointer; color: #58b4e6; font-weight:500;outline: none;"
+      >
+        {{ element.title }}
+      </td>
     </ng-container>
     <ng-container matColumnDef="categories">
       <th mat-header-cell *matHeaderCellDef>Categories</th>
-      <td mat-cell *matCellDef="let element">{{ element.categories }}</td>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        style="margin: 1rem;"
+        class="geeks"
+      >
+        {{ element.categories }}
+      </td>
     </ng-container>
     <ng-container matColumnDef="location">
       <th mat-header-cell *matHeaderCellDef>Location</th>
-      <td mat-cell *matCellDef="let element">{{ element.location }}</td>
+      <td mat-cell *matCellDef="let element" class="geeks">
+        {{ element.location }}
+      </td>
     </ng-container>
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef>Date</th>
-      <td mat-cell *matCellDef="let element">{{ element.expried }}</td>
+      <td mat-cell *matCellDef="let element" class="geeks">
+        {{ element.expried }}
+      </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>

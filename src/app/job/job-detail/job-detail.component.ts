@@ -4,6 +4,7 @@ import { JobsService } from '../../services/job.service';
 import { Location } from '@angular/common';
 import { Jobs } from '../../../models/jobs';
 import { api } from '../../services/api';
+import { ApplicationsService } from '../../services/applications.service';
 
 @Component({
   selector: 'app-job-detail',
@@ -25,10 +26,18 @@ export class JobDetailComponent implements OnInit {
     categories: '',
     vacancies: null,
   };
+  applications = {
+    name: '',
+    email: '',
+    phone: '',
+    cv: null,
+  };
+  fileToUpload: File = null;
   constructor(
     private route: ActivatedRoute,
     private jobsService: JobsService,
-    private location: Location
+    private location: Location,
+    private cvService: ApplicationsService
   ) {}
   public id = +this.route.snapshot.paramMap.get('id');
   getJobsFromRoute(newsId): void {
@@ -44,8 +53,23 @@ export class JobDetailComponent implements OnInit {
         console.log(data);
       });
   }
-  goBack(): void {
-    this.location.back();
+  getCv(e): void {
+    this.applications[e.target.name] = e.target.value;
+    console.log(this.applications);
+  }
+  onFileChange(e) {
+    this.fileToUpload = e.target.files[0];
+    console.log(e.target.files[0]);
+  }
+  onSubmitCv(): void {
+    this.cvService.postFile(this.fileToUpload).subscribe((data: any[]) => {
+      // const demo = {...this.applications,cv:data[0].url}
+      // console.log(demo)
+      this.cvService.submitCv({ ...this.applications, cv: data[0].url }).subscribe((data:any[])=>{
+        console.log(data)
+      })
+      // console.log(data[0].url);
+    });
   }
   ngOnInit(): void {
     this.getJobsFromRoute(this.id);

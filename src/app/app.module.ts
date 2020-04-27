@@ -1,12 +1,11 @@
 import { JobsService } from './services/job.service';
+import { ApplicationsService } from './services/applications.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
-import {
-  SwiperModule
-} from 'ngx-swiper-wrapper';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NguCarouselModule } from '@ngu/carousel';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -23,8 +22,8 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NewsComponent } from './news/news/news.component';
 import { DetailComponent } from './news/detail/detail.component';
 import { NewsService } from './services/news.service';
-import {HttpClientModule} from '@angular/common/http'
-import {NgxPaginationModule} from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { JobsComponent } from './job/jobs/jobs.component';
 import { JobDetailComponent } from './job/job-detail/job-detail.component';
 import { ContactComponent } from './contact/contact/contact.component';
@@ -57,10 +56,10 @@ import { ContactComponent } from './contact/contact/contact.component';
     NguCarouselModule,
     NgxScrollTopModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
     //
   ],
-  providers: [NewsService,JobsService],
+  providers: [NewsService, JobsService,ApplicationsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
