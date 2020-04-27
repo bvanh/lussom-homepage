@@ -10,7 +10,7 @@ import { JobsComponent } from './job/jobs/jobs.component';
 import { JobDetailComponent } from './job/job-detail/job-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/careers', pathMatch: 'full' },
+  { path: '', redirectTo: '/contact', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'news', component: NewsComponent },

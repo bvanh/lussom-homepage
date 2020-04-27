@@ -18,3 +18,9 @@ export class applications {
   phone: String;
   file: String;
 }
+export class feedbacks {
+  id: Number;
+  name: String;
+  email: String;
+  feedbacks: String;
+}

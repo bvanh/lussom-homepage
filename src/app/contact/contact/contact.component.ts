@@ -1,16 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import {FeedbacksService} from '../../services/feedback.service'
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  constructor() {}
-
+  // indexFeedbacks = {
+  //   name: '',
+  //   email: '',
+  //   feedbacks: '',
+  // };
+  constructor(
+    private feedbacksService: FeedbacksService,
+  ) {}
+  getIndexFeedbacks(e){
+    console.log(e)
+  }
+  // onSubmitFeedback():void{
+  //   this.feedbacksService.submitFeedbacks(this.indexFeedbacks).subscribe((data:any[])=>{
+  //     console.log(data)
+  //   })
+  // }
   ngOnInit(): void {}
 }
