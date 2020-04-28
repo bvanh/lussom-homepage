@@ -10,6 +10,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 // import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { api } from './api';
+import { error } from 'protractor';
 
 @Injectable()
 export class FeedbacksService {
@@ -17,6 +18,11 @@ export class FeedbacksService {
   submitFeedbacks(indexFeedbacks): Observable<feedbacks[]> {
     return this.http
       .post<any[]>(`${api.API_ROOT}/feedbacks`, indexFeedbacks)
-      .pipe(catchError((error) => of([])));
+      .pipe(
+        catchError((err) => {
+          console.log('caught rethrown error, providing fallback value');
+          return of([]);
+        })
+      );
   }
 }

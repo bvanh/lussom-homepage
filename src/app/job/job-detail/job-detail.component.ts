@@ -63,12 +63,9 @@ export class JobDetailComponent implements OnInit {
   }
   onSubmitCv(): void {
     this.cvService.postFile(this.fileToUpload).subscribe((data: any[]) => {
-      // const demo = {...this.applications,cv:data[0].url}
-      // console.log(demo)
       this.cvService.submitCv({ ...this.applications, cv: data[0].url }).subscribe((data:any[])=>{
         console.log(data)
       })
-      // console.log(data[0].url);
     });
   }
   ngOnInit(): void {

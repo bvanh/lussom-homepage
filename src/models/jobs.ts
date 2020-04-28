@@ -22,5 +22,5 @@ export class feedbacks {
   id: Number;
   name: String;
   email: String;
-  feedbacks: String;
+  feedback: String;
 }

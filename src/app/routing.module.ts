@@ -6,7 +6,6 @@ import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './news/detail/detail.component';
 import { NewsComponent } from './news/news/news.component';
 import { JobsComponent } from './job/jobs/jobs.component';
-
 import { JobDetailComponent } from './job/job-detail/job-detail.component';
 
 const routes: Routes = [

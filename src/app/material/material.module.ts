@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import {MatDialogModule} from "@angular/material/dialog";
 @NgModule({
   declarations: [],
   imports: [
@@ -19,7 +20,8 @@ import { MatInputModule } from '@angular/material/input';
     MatListModule,
     MatCardModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   exports: [
     MatSidenavModule,
@@ -29,7 +31,8 @@ import { MatInputModule } from '@angular/material/input';
     MatListModule,
     MatCardModule,
     MatTableModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
 })
 export class MaterialModule {}
