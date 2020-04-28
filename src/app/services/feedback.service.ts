@@ -3,7 +3,7 @@ import { feedbacks } from '../../models/jobs';
 
 //Get data asynchronously with Observable
 import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+import { of,throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 //MessageService
@@ -19,10 +19,10 @@ export class FeedbacksService {
     return this.http
       .post<any[]>(`${api.API_ROOT}/feedbacks`, indexFeedbacks)
       .pipe(
-        catchError((err) => {
-          console.log('caught rethrown error, providing fallback value');
-          return of([]);
-        })
+        catchError(this.handleError)
       );
   }
+  handleError(error) {
+    return throwError(error);
+}
 }

@@ -1,4 +1,5 @@
 import { FeedbacksService } from './services/feedback.service';
+import { ValidationService } from './services/validation.service';
 import { JobsService } from './services/job.service';
 import { ApplicationsService } from './services/applications.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,6 +30,7 @@ import { JobsComponent } from './job/jobs/jobs.component';
 import { JobDetailComponent } from './job/job-detail/job-detail.component';
 import { ContactComponent } from './contact/contact/contact.component';
 import { ModalComponent } from './navigation/modal/modal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -60,9 +62,16 @@ import { ModalComponent } from './navigation/modal/modal.component';
     NgxScrollTopModule,
     HttpClientModule,
     NgxPaginationModule,
+    FormsModule
     //
   ],
-  providers: [NewsService, JobsService, ApplicationsService, FeedbacksService],
+  providers: [
+    NewsService,
+    JobsService,
+    ApplicationsService,
+    FeedbacksService,
+    ValidationService,
+  ],
   bootstrap: [AppComponent],
   entryComponents: [ModalComponent],
 })

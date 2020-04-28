@@ -38,6 +38,16 @@ export class JobsComponent implements OnInit {
         this.jobs = data;
       });
   }
+  checkTimestamp(strDate) {
+    let today = new Date().getTime();
+    let dateApply = new Date(strDate).getTime();
+    let expried = today - dateApply;
+    if (expried < 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   getNewsCount(): void {
     this.jobsService
       .getJobsCount(`${api.API_NEWS_COUNT}`)
