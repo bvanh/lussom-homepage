@@ -24,16 +24,15 @@
 }
 .news-newest {
   display: flex;
-  border: 0.5px solid rgb(126, 126, 126);
+  border: 0.5px solid #dedede;
   border-radius: 5px;
   margin: 1rem 0;
-  padding: 2px;
   & img {
     width: 30% !important;
-    margin: 0.02rem;
+    margin: 0.06rem;
   }
   & div {
-    padding: 0.5rem;
+    // padding: 0.5rem;
   }
 }
 .tags {
@@ -64,4 +63,8 @@
     border: .5px solid #75757554;
 
   }
+}
+._89n_ {
+  background: #4267b2 !important;
+  border: 0;
 }

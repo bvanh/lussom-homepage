@@ -19,7 +19,7 @@
     ></div>
     <!-- <img [src]="newsDetail.thumbnail" /> -->
   </div>
-  <div fxFlex="67%" fxFlex.lt-md='100%'>
+  <div fxFlex="67%" fxFlex.lt-md="100%">
     <div fxLayout="column" [innerHTML]="newsDetail.content"></div>
     <div class="tags-container">
       <span class="tags">
@@ -53,6 +53,7 @@
           <h3
             (click)="getNewsFromRoute(item.id)"
             routerLink="/news/detail/{{ item.id }}"
+            style="cursor: pointer;"
           >
             {{ item.name }}
           </h3>
@@ -70,12 +71,14 @@
     <div *ngFor="let item of news">
       <div class="news-newest" fxFlex="row">
         <img [src]="item.thumbnail" width="30%" />
-        <div
-          style="width: 70%;"
-          (click)="getNewsFromRoute(item.id)"
-          routerLink="/news/detail/{{ item.id }}"
-        >
-          {{ item.name }}
+        <div style="display: flex; flex-direction: column; justify-content: space-between;padding: .3rem;">
+          <div
+            (click)="getNewsFromRoute(item.id)"
+            routerLink="/news/detail/{{ item.id }}"
+          >
+            {{ item.name }}
+          </div>
+          <span>{{ item.created_at | date: "dd-MM-yyyy" }}</span>
         </div>
       </div>
     </div>

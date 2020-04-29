@@ -12,11 +12,16 @@
   align-items: center;
   margin: 0.5rem 0;
   height: 2rem;
+  width: 70%;
+  @media (max-width:1440px){
+    width: 100%;
+  }
   & input {
     border-radius: 16px;
     border: 1px solid #d0cdcd;
     padding: 0.2rem 1rem;
     width: 50%;
+    height: 2.1rem;
     outline: none;
   }
 }
@@ -25,22 +30,31 @@
   justify-content: space-between;
   align-items: center;
   margin: 0.5rem 0;
+  width: 70%;
+  @media (max-width:1440px){
+    width: 100%;
+  }
 }
 .submit-btn {
   display: flex;
-  justify-content: center;
+  justify-content:flex-end;
   align-items: center;
+  width: 70%;
+  @media (max-width:1440px){
+    width: 100%;
+  }
   & .submit-btn-ok {
     background: #ffc50e;
     border: 1px solid #fafafa;
     border-radius: 24px;
     height: 2.2rem;
-    width: 30%;
+    width: 49%;
+    margin-right: 1%;
     color: white;
-    font-size: 85%;
+    font-size: 100%;
     outline: none;
     @media (max-width:600px) {
-      width: 40%;
+      width: 39%;
     }
   }
   & .submit-btn-cancel {
@@ -48,12 +62,13 @@
     border: 1px solid #fafafa;
     border-radius: 24px;
     height: 2.2rem;
-    width: 30%;
+    width: 49%;
+    margin-left: 1%;
     color: white;
-    font-size: 85%;
+    font-size: 100%;
     outline: none;
     @media (max-width:600px) {
-      width: 40%;
+      width: 39%;
     }
   }
 }
@@ -69,6 +84,7 @@
     color: #2c7da9;
     font-size: 1rem;
     font-weight: 500;
+    cursor: pointer;
   }
 }
 .job-require {
@@ -78,6 +94,11 @@
   }
 }
 .job-more-info {
+  & div:first-child{
+    padding: 1rem;
+    background-color: #e8e6e6;
+    border-radius: 8px;
+  }
   & h3 {
     margin: 0;
   }
@@ -91,12 +112,33 @@
   display: flex;
   align-items: baseline;
   flex-direction: row;
-
   & img {
     padding-right: 0.5rem;
+    width: 22px !important;
   }
   & h3 {
     margin: 0;
     padding-right: 0.5rem;
   }
 }
+
+.new-button {
+  display: inline-block;
+  padding: 8px 12px; 
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #9c27b0;
+  font-size: 16px;
+  color: #fff;
+}
+// input[type="file"] {
+//   position:relative;
+// float:left;
+// cursor:pointer;
+// right:138px;
+// // -moz-opacity:0 ;
+// filter:alpha(opacity: 0);
+// opacity: 0;
+// z-index: 2;
+// text-align: right;
+//         }

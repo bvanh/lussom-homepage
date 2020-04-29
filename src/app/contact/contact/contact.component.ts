@@ -59,12 +59,6 @@ export class ContactComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        // const intialIndex = {
-        //   name: '',
-        //   email: '',
-        //   feedback: '',
-        // };
-        // this.indexFeedbacks = intialIndex;
       }
     });
   }

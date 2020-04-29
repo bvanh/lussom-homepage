@@ -5,24 +5,24 @@
     </button>
   </div>
   <div class="logo" style="text-align: right;" fxHide.gt-sm>
-    <img src="assets/slider/logoLussom.png" width="75%" />
+    <img src="assets/slider/logoLussom.png" width="75%" routerLink="/home" routerLinkActive="isNav-active"/>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="center" fxHide.lt-sm class="menu">
     <div class="logo" style="text-align: right;">
-      <img src="assets/slider/logoLussom.png" width="75%" />
+      <img src="assets/slider/logoLussom.png" width="75%" routerLink="/home" style="cursor: pointer;"/>
     </div>
     <ul fxLayout fxLayoutGap="20px" class="navigation-items">
-      <li>
-        <a routerLink="/home">HOME</a>
+      <li routerLink="/home" routerLinkActive="isNav-active">
+        <a style="outline: none;">HOME</a>
       </li>
-      <li>
-        <a routerLink="/news">NEWS</a>
+      <li routerLink="/news" routerLinkActive="isNav-active">
+        <a style="outline: none;">NEWS</a>
       </li>
-      <li>
-        <a routerLink="/careers">CAREERS</a>
+      <li routerLink="/careers" routerLinkActive="isNav-active">
+        <a style="outline: none;">CAREERS</a>
       </li>
-      <li>
-        <a routerLink="/contact">CONTACT US</a>
+      <li routerLink="/contact" routerLinkActive="isNav-active">
+        <a style="outline: none;">CONTACT US</a>
       </li>
     </ul>
   </div>

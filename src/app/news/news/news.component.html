@@ -14,8 +14,8 @@
           | paginate
             : { itemsPerPage: 10, currentPage: currentPage, totalItems: count }
       " fxFlex.gt-xs="25%" fxFlex.lt-sm="50%" class="news-items">
-      <img [src]="item.thumbnail" width="100%" />
-      <h3>{{ item.name }}</h3>
+      <img [src]="item.thumbnail" width="100%" routerLink="/news/detail/{{ item.id }}" style="cursor: pointer;"/>
+      <h3 routerLink="/news/detail/{{ item.id }}" style="cursor: pointer;">{{ item.name }}</h3>
       <p class="short-content">{{ item.shortContent }}</p>
       <div class="news-footer">
         <div class="news-footer-date" fxFlex="60%">

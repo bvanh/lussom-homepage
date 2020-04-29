@@ -76,6 +76,9 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+h3:focus{
+  outline: none;
+}
 .news-header {
   background-image: url(assets/news/background_header.png);
   background-position: center;
@@ -86,6 +89,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1080px) and (min-width: 600px) {
+    min-height: 20rem;
+  }
   & div {
     display: flex;
     justify-content: center;
@@ -116,16 +122,16 @@ $screen-xl-min: 1500px;
     width: 100% !important;
   }
 }
-.pagination{
+.pagination {
   max-width: 1440px;
-  margin: 0 auto ;
+  margin: 0 auto;
   text-align: center;
-  margin: 2rem 0;
-  & li{
+  margin: 2rem auto;
+  & li {
     margin: 0 1rem !important;
     border-radius: 100%;
   }
-  & ul{
+  & ul {
     padding: 0;
   }
 }
@@ -135,7 +141,7 @@ $screen-xl-min: 1500px;
   border-radius: 4px;
   margin-left: 1rem;
   color: white;
-  @media (max-width:1080px) {
+  @media (max-width: 1080px) {
     margin: 0;
   }
 }

@@ -1,11 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { JobsService } from '../../services/job.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../../navigation/modal/modal.component';
 import { Location } from '@angular/common';
 import { Jobs } from '../../../models/jobs';
 import { api } from '../../services/api';
+import { of } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import { ApplicationsService } from '../../services/applications.service';
-
+import { ValidationService } from '../../services/validation.service';
 @Component({
   selector: 'app-job-detail',
   templateUrl: './job-detail.component.html',
@@ -30,14 +34,20 @@ export class JobDetailComponent implements OnInit {
     name: '',
     email: '',
     phone: '',
-    cv: null,
+  };
+  intialIndexCv = {
+    name: '',
+    email: '',
+    phone: '',
   };
   fileToUpload: File = null;
   constructor(
     private route: ActivatedRoute,
     private jobsService: JobsService,
     private location: Location,
-    private cvService: ApplicationsService
+    private cvService: ApplicationsService,
+    public dialog: MatDialog,
+    public checkEmail: ValidationService
   ) {}
   checkTimestamp(strDate) {
     let today = new Date().getTime();
@@ -71,11 +81,46 @@ export class JobDetailComponent implements OnInit {
     this.fileToUpload = e.target.files[0];
     console.log(e.target.files[0]);
   }
+  clearInputCv(): void {
+    this.applications = { ...this.intialIndexCv };
+    this.fileToUpload = null;
+  }
   onSubmitCv(): void {
-    this.cvService.postFile(this.fileToUpload).subscribe((data: any[]) => {
-      this.cvService.submitCv({ ...this.applications, cv: data[0].url }).subscribe((data:any[])=>{
-        console.log(data)
-      })
+    const { name, email, phone } = this.applications;
+    const checkMail = this.checkEmail.validateEmail(email);
+    const checkPhone = this.checkEmail.validatePhone(phone);
+    if (checkMail && checkPhone && name !== '' && this.fileToUpload !== null) {
+      this.cvService.postFile(this.fileToUpload).subscribe((data: any[]) => {
+        this.cvService
+          .submitCv({ ...this.applications, cv: data[0].url })
+          .pipe(
+            tap((data) => {
+              console.log(data);
+              this.openDialog('Gửi CV thành công!');
+              this.applications = { ...this.intialIndexCv };
+              this.fileToUpload = null;
+            }),
+            catchError((err) => {
+              this.openDialog(err.error.message);
+              return of([]);
+            })
+          )
+          .subscribe((data: any[]) => {
+            console.log(data);
+          });
+      });
+    } else {
+      this.openDialog('Kiểm tra lại thông tin!');
+    }
+  }
+  openDialog(errMessage): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '350px',
+      data: errMessage,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+      }
     });
   }
   ngOnInit(): void {

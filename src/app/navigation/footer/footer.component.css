@@ -1,10 +1,9 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,600;0,700;1,200;1,400;1,700&display=swap"); */
 a {
   text-decoration: none;
-  color: white;
+  color: lightgray;
   font-family: "Source Sans Pro", sans-serif;
 }
-
 a:hover,
 a:active {
   color: lightgray;
@@ -13,6 +12,10 @@ a:active {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex;
+}
+.navigation-items>li{
+  padding: 0 .5rem;
 }
 .footer {
   background: #1a80b6;
@@ -30,6 +33,10 @@ mat-toolbar {
   display: flex;
   justify-content: space-between;
 } */
+.footer-menu{
+  display: flex;
+  justify-content: space-around;
+}
 .coppyright {
   font-size: 1rem;
   font-weight: lighter;

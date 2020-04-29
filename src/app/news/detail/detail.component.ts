@@ -43,6 +43,8 @@ export class DetailComponent implements OnInit {
           console.log(data);
         });
     });
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   }
   getNewsFromServices(): void {
     this.newsService
