@@ -9,7 +9,12 @@
 </div>
 
 <div fxLayout="row wrap" class="detail-container">
-  <div fxFlex="70%" style="padding: 0 1rem;">
+  <div
+    fxFlex="70%"
+    fxFlex.lt-md="100%"
+    style="padding: 0 1rem;"
+    class="job-require"
+  >
     <h2>Why should you apply for this position</h2>
     <div [innerHTML]="jobsDetail.reason"></div>
     <h2>Jobs Description</h2>
@@ -17,29 +22,24 @@
     <h2>Your Skill and Experience</h2>
     <div [innerHTML]="jobsDetail.skill"></div>
     <div class="form-apply">
-      <span
-       class="input-cv"
+      <span class="input-cv"
         >Full name*
         <input
-          
           placeholder="Your name"
           name="name"
           required
           (keyup)="getCv($event)"
       /></span>
-      <span
-      class="input-cv"
+      <span class="input-cv"
         >Email*
         <input
-          
           placeholder="Your Email"
           type="email"
           name="email"
           (keyup)="getCv($event)"
           required
       /></span>
-      <span
-      class="input-cv"
+      <span class="input-cv"
         >Phone Number*
         <input
           class="input-cv"
@@ -49,8 +49,7 @@
           (keyup)="getCv($event)"
           required
       /></span>
-      <span
-      class="attact-cv"
+      <span class="attact-cv"
         >Resume/CV*
         <!-- <label for="cv"><img src='../../../assets/detail/attact-cv.png'/></label> -->
         <input
@@ -75,13 +74,21 @@
       >
         {{ item.title }}
       </span>
-      <span style="padding-left: 1rem; border-left: 1px solid #b5b5b5;">{{ item.expried }}</span>
+      <span style="padding-left: 1rem; border-left: 1px solid #b5b5b5;">
+        {{ item.expried | date: "dd-MM-yyyy" }}
+        <span *ngIf="checkTimestamp(item.expried)" class="stick-new"
+          >new</span></span>
     </div>
   </div>
-  <div fxFlex="30%" style="padding: 0 1rem;">
+  <div
+    fxFlex="30%"
+    fxFlex.lt-md="100%"
+    style="padding: 0 1rem;"
+    class="job-more-info"
+  >
     <h2>{{ jobsDetail.title }}</h2>
     <div class="salary">
-      <img src="../../../assets/detail/salary-icon.png" />
+      <img src="../../../assets/detail/salary-icon.png" width="22px" />
       <h3>Salary:</h3>
       {{ jobsDetail.salary }}
     </div>
@@ -90,5 +97,7 @@
       <h3>Address:</h3>
       {{ jobsDetail.location }}
     </div>
+    <h3>{{ jobsDetail.vacancies }} VACANCIES</h3>
+    <h3>{{ jobsDetail.experience }}+ EXPERIENCES</h3>
   </div>
 </div>

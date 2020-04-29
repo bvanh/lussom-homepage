@@ -116,3 +116,26 @@ $screen-xl-min: 1500px;
     width: 100% !important;
   }
 }
+.pagination{
+  max-width: 1440px;
+  margin: 0 auto ;
+  text-align: center;
+  margin: 2rem 0;
+  & li{
+    margin: 0 1rem !important;
+    border-radius: 100%;
+  }
+  & ul{
+    padding: 0;
+  }
+}
+.stick-new {
+  background: #ffc13c;
+  padding: 0.15rem 0.7rem;
+  border-radius: 4px;
+  margin-left: 1rem;
+  color: white;
+  @media (max-width:1080px) {
+    margin: 0;
+  }
+}

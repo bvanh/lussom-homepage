@@ -39,6 +39,16 @@ export class JobDetailComponent implements OnInit {
     private location: Location,
     private cvService: ApplicationsService
   ) {}
+  checkTimestamp(strDate) {
+    let today = new Date().getTime();
+    let dateApply = new Date(strDate).getTime();
+    let expried = today - dateApply;
+    if (expried < 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   public id = +this.route.snapshot.paramMap.get('id');
   getJobsFromRoute(newsId): void {
     this.jobsService.getJobsFromId(newsId).subscribe((data: any) => {

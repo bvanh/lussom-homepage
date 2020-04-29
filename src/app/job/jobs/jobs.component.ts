@@ -48,7 +48,7 @@ export class JobsComponent implements OnInit {
       return false;
     }
   }
-  getNewsCount(): void {
+  getJobsCount(): void {
     this.jobsService
       .getJobsCount(`${api.API_NEWS_COUNT}`)
       .subscribe((data: any[]) => {
@@ -71,6 +71,6 @@ export class JobsComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getJobsFromServices(this.currentPage);
-    this.getNewsCount();
+    this.getJobsCount();
   }
 }
