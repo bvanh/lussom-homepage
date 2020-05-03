@@ -20,7 +20,11 @@
     <!-- <img [src]="newsDetail.thumbnail" /> -->
   </div>
   <div fxFlex="67%" fxFlex.lt-md="100%">
-    <div fxLayout="column" [innerHTML]="newsDetail.content"></div>
+    <div
+      fxLayout="column"
+      [innerHTML]="newsDetail.content"
+      style="margin-top: 1rem;"
+    ></div>
     <div class="tags-container">
       <span class="tags">
         <span></span>
@@ -38,7 +42,9 @@
       allowTransparency="true"
       allow="encrypted-media"
     ></iframe>
-    <h2>Bài viết liên quan</h2>
+    <h2 style="border-top: 1px solid #e2dfdf; padding-top: 1rem;">
+      Bài viết liên quan
+    </h2>
     <div class="news-relate" fxLayout="row wrap">
       <div
         *ngFor="let item of newsByCategories; index as i"
@@ -71,7 +77,14 @@
     <div *ngFor="let item of news">
       <div class="news-newest" fxFlex="row">
         <img [src]="item.thumbnail" width="30%" />
-        <div style="display: flex; flex-direction: column; justify-content: space-between;padding: .3rem;">
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0.3rem;
+          "
+        >
           <div
             (click)="getNewsFromRoute(item.id)"
             routerLink="/news/detail/{{ item.id }}"

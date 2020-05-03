@@ -63,7 +63,7 @@ $lussom-homepage-theme: mat-light-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 // @include angular-material-theme($lussom-homepage-theme);
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,600;0,700;1,200;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,600;0,700;1,200;1,400;1,700;1,900&Roboto:wght@900display=swap");
 
 /* You can add global styles to this file, and also import other style files */
 // @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
@@ -76,7 +76,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-h3:focus{
+h3:focus {
   outline: none;
 }
 .news-header {
@@ -101,11 +101,11 @@ h3:focus{
   }
   & h2 {
     color: white;
-    font-family: "Source Sans Pro", unset;
+    font-family: "Source Sans Pro", sans-serif;
     letter-spacing: 0.1rem;
     font-size: 2.5rem;
     font-style: italic;
-    font-weight: bolder;
+    font-weight: 900;
   }
   & p {
     color: white;
@@ -120,6 +120,11 @@ $screen-xl-min: 1500px;
   }
   & .news-detail-content > div > div > img {
     width: 100% !important;
+  }
+  & h2 {
+    margin: 1rem 0 0.5rem 0;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 900;
   }
 }
 .pagination {

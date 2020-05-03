@@ -8,6 +8,21 @@ a:hover,
 a:active {
   color: lightgray;
 }
+a:focus,li:focus{
+  outline: none;
+}
+li{
+  cursor: pointer;
+}
+.isNav-active {
+  background: #29a5ea00;
+  display: flex;
+  align-items: center;
+  outline: none;
+}
+.isNav-active>a{
+  color: white;
+}
 .navigation-items {
   list-style-type: none;
   padding: 0;

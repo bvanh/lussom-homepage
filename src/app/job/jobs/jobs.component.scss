@@ -25,15 +25,19 @@ td.mat-cell:first-of-type,
 td.mat-footer-cell:first-of-type {
   padding-left: 24px;
   border-left-width: 1px;
-  border-left-color: gainsboro;
+  border-left-color: #cccccc4f;
   border-left-style: solid;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
 }
 td.mat-cell:last-of-type,
 td.mat-footer-cell:last-of-type {
   padding-right: 24px;
   border-right-width: 1px;
-  border-right-color: gainsboro;
+  border-right-color: #cccccc4f;
   border-right-style: solid;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
 table {
   border-collapse: collapse;
@@ -41,8 +45,8 @@ table {
 // th,
 td {
   // text-align: center;
-  padding: 8px !important;
-  border-top: 1px solid gainsboro;
+  padding: 12px !important;
+  border-top: 1px solid #cccccc4f;
 }
 .geeks {
   border-right: hidden;

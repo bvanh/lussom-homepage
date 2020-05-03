@@ -15,18 +15,21 @@
       veniam.'
     </div>
   </div>
-  <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="cards">
+  <ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="jobs">
     <div *nguCarouselDef="let card" class="item">
       <mat-card class="example-card">
-        <img mat-card-image [src]="card.img" alt="Photo of a Shiba Inu" />
+        <!-- <img mat-card-image [src]="card.img" alt="Photo of a Shiba Inu" /> -->
         <mat-card-content>
-          <p>
-            {{ card.job }}
-          </p>
-          <span>{{ card.date }}</span>
+          <h3 style="font-weight: 600;">
+            {{ card.title }}
+          </h3>
+          <span>Vị trí trống: {{ card.vacancies }}</span>
+          <span>Kinh nghiệm: {{ card.experience }}</span>
+          <span>Bộ phận: {{ card.categories }}</span>
+          <span>Ngày hết hạn: {{ card.date }}</span>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button class="btn-read-more-job">Read more >></button>
+          <button mat-button class="btn-read-more-job" routerLink="/careers/detail/{{ card.id }}">Read more >></button>
         </mat-card-actions>
       </mat-card>
     </div>

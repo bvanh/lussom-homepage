@@ -1,8 +1,11 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&family=Source+Sans+Pro:ital,wght@900&display=swap');
 .news-detail-title {
   width: 100%;
   & h2 {
     margin: 1rem 0 0.5rem 0;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 900;
   }
   & .news-detail-thumbnail {
     height: 20rem;
@@ -21,6 +24,10 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 1rem;
+  & h3{
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+  }
 }
 .news-newest {
   display: flex;

@@ -6,13 +6,16 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
-
+import { JobsService } from './../../services/job.service';
+import { Jobs } from '../../../models/jobs';
+import { api } from '../../services/api';
 @Component({
   selector: 'app-section4',
   templateUrl: './section4.component.html',
   styleUrls: ['./section4.component.css'],
 })
 export class Section4Component implements OnInit {
+  jobs: Jobs[];
   slideNo = 1;
   withAnim = true;
   resetAnim = true;
@@ -20,40 +23,31 @@ export class Section4Component implements OnInit {
   carouselConfig: NguCarouselConfig = {
     grid: { xs: 2, sm: 4, md: 4, lg: 4, all: 0 },
     load: 3,
-    interval: { timing: 400000, initialDelay: 1000 },
+    interval: { timing: 4000, initialDelay: 1000 },
     loop: true,
     touch: true,
     velocity: 0.2,
+    speed: 700,
   };
-  public cards = [
-    {
-      img: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      job: 'Senior Customer Service Excutive Ha Noi City',
-      date: '28/02/2020',
-    },
-    {
-      img: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      job: 'Senior Customer Service Excutive Ha Noi City',
-      date: '28/02/2020',
-    },
-    {
-      img: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      job: 'Senior Customer Service Excutive Ha Noi City',
-      date: '28/02/2020',
-    },
-    {
-      img: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
-      job: 'Senior Customer Service Excutive Ha Noi City',
-      date: '28/02/2020',
-    },
-  ];
-  constructor(private cdr: ChangeDetectorRef) {}
-
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private jobsService: JobsService
+  ) {}
+  getJobsFromServices(currentPage): void {
+    this.jobsService
+      .getJobs(`${api.API_ROOT}/jobs?_limit=10&_start=${currentPage}`)
+      .subscribe((data: any[]) => {
+        console.log(data);
+        this.jobs = data;
+      });
+  }
   ngAfterViewInit() {
     this.cdr.detectChanges();
   }
   moveTo(slide) {
     this.myCarousel.moveTo(slide, !this.withAnim);
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getJobsFromServices(0);
+  }
 }

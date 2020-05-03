@@ -52,16 +52,17 @@ mat-toolbar {
   padding: 0 !important;
 }
 .menu {
-  max-width: 90%;
+  max-width: 88%;
   margin: 0 auto;
   position: relative;
   align-items: center !important;
+  justify-content: space-between !important;
 }
-.logo {
+/* .logo {
   position: absolute;
   left: 0;
   display: flex;
-}
+} */
 @media (min-width: 1600px) {
   .menu {
     max-width: 1440px;
