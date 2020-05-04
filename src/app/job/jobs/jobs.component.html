@@ -41,22 +41,37 @@
         *matCellDef="let element"
         style="margin: 1rem;"
         class="geeks"
+        routerLink="/careers/detail/{{ element.id }}"
+        style="cursor: pointer;"
       >
         {{ element.categories }}
       </td>
     </ng-container>
     <ng-container matColumnDef="location">
       <th mat-header-cell *matHeaderCellDef>Location</th>
-      <td mat-cell *matCellDef="let element" class="geeks">
+      <td
+        mat-cell
+        *matCellDef="let element"
+        class="geeks"
+        routerLink="/careers/detail/{{ element.id }}"
+        style="cursor: pointer;"
+      >
         {{ element.location }}
       </td>
     </ng-container>
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef>Date</th>
-      <td mat-cell *matCellDef="let element" class="geeks">
+      <td
+        mat-cell
+        *matCellDef="let element"
+        class="geeks"
+        routerLink="/careers/detail/{{ element.id }}"
+        style="cursor: pointer;"
+      >
         {{ element.expried | date: "dd-MM-yyyy" }}
         <span *ngIf="checkTimestamp(element.expried)" class="stick-new"
-          >new</span>
+          >new</span
+        >
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

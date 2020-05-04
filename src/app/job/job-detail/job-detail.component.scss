@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  border-top: 1px solid #cccccc4f;
+  border-top: 1px solid rgba(0, 0, 0, 0.14) !important;
   @media (max-width: 600px) {
     padding: 0;
   }
@@ -106,7 +106,7 @@
 .jobs-relate {
   display: flex;
   justify-content: space-between;
-  border: 1px solid #cccccc4f;
+  border: 1px solid rgba(0, 0, 0, 0.14) !important;
   border-radius: 8px;
   align-items: center;
   margin-bottom: 0.8rem;
@@ -120,7 +120,7 @@
 }
 .job-require {
   & .frame {
-    border: 1px solid #cccccc4f;
+    border: 1px solid rgba(0, 0, 0, 0.14) !important;
     border-radius: 5px;
     padding: 1rem;
   }
@@ -140,6 +140,8 @@
   }
   @media (max-width: 960px) {
     order: 1;
+    margin-bottom: 1rem;
+    margin-right: .5rem;
     // width: 100% !important  ;
   }
 }

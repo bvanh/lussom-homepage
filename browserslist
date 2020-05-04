@@ -9,4 +9,8 @@
 last 2 versions
 Firefox ESR
 not dead
-not IE 9-11 # For IE 9-11 support, remove 'not'.
+ # the default configuration
+ not IE 9-11
+
+ # the change - remove the "not"
+ IE 9-11

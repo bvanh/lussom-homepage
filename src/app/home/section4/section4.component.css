@@ -1,117 +1,124 @@
-.section4{
-    flex-direction: column;
+.section4 {
+  flex-direction: column;
 }
-.section-title{
-    font-size: 3rem;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-style: italic;
-    font-weight: bold;
-    margin-bottom: 3rem;
-    margin-top: 1rem;
-  }
-  .section-title-content{
-    padding: 0 30%;
-  }
-  .btn-read-more {
-    background-color: #1a80b6;
-    width: 8rem !important;
-    height: 2.5rem;
-    font-size: 1rem;
-    color: white;
-    padding-left: 1rem;
-  }
-  ngu-carousel{
-    max-width: 1440px;
-    margin: 0 auto;
-  }
-  mat-card{
-    text-align: center;
-    padding: 2rem;
-    
-  }
-  mat-card-content{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: initial ;
-  }
-  .myPoint {
-    /* position: absolute;
+.section-title {
+  font-size: 3rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+.section-title-content {
+  padding: 0 30%;
+}
+.btn-read-more {
+  background-color: #1a80b6;
+  width: 8rem !important;
+  height: 2.5rem;
+  font-size: 1rem;
+  color: white;
+  padding-left: 1rem;
+}
+ngu-carousel {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+mat-card {
+  text-align: center;
+  padding: 2rem;
+}
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: initial;
+}
+.myPoint {
+  /* position: absolute;
     left: 20%;
     bottom: 20%; */
-    text-align: center;
-    padding: 0  !important;
+  text-align: center;
+  padding: 0 !important;
+}
+.myPoint li {
+  display: inline-block;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.55);
+  padding: 4px;
+  margin: 0 3px;
+  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  transition: 0.4s;
+}
+.myPoint li.active {
+  background: #6b6b6b;
+  transform: scale(1.2);
+}
+.btn-read-more-job {
+  color: white;
+  width: 100%;
+  background: #1a80b6;
+}
+.item {
+  padding: 1rem;
+}
+@media screen and (max-width: 768px) and (min-width: 415px) {
+  .section4 > div {
+    padding: 1rem 10% 2rem;
   }
-  .myPoint li {
-    display: inline-block;
-    border-radius: 50%;
-    border: 2px solid rgba(0, 0, 0, 0.55);
-    padding: 4px;
-    margin: 0 3px;
-    transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
-    transition: 0.4s;
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
-  .myPoint li.active {
-    background: #6b6b6b;
-    transform: scale(1.2);
+  .btn-read-more-job {
+    font-size: 0.7rem;
   }
-  .btn-read-more-job{
-    color: white;
-    width: 100%;
-    background: #1a80b6;
+}
+@media screen and (max-width: 415px) {
+  .section4-title-container {
+    padding: 3rem 10% 3rem 10% !important;
   }
-  .item{
+  .section-content {
+    font-size: 0.8rem;
     padding: 1rem;
   }
-  @media screen and (max-width: 768px) and (min-width: 415px) {
-    .section4 > div {
-      padding: 1rem 10% 2rem;
-    }
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .btn-read-more-job{
-      font-size: .7rem;
-    }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
-  @media screen and (max-width: 415px) {
-    .section4-title-container{
-      padding:3rem 10% 3rem 10% !important;
-    }
-    .section-content {
-      font-size: .8rem;
-      padding:1rem;
-    } 
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .section-title-content{
-      padding: 0;
-    }
-    .section3{
-      background-position: center;
-    }
-    .item{
-      padding:.5rem;
-    }
-    mat-card{
-      padding:1.5rem;
-    }
-    ngu-carousel{
-      padding: 0;
-      max-width: 90%;
-      margin: 0 auto;
-    }
+  .section-title-content {
+    padding: 0;
   }
-  @media screen and (min-width: 415px) and (max-width:1440px) {
-    .section-title-content{
-      padding: 0 20%;
-    }
-    ngu-carousel{
-      max-width: 90%;
-      margin: 0 auto;
-    }
+  .section3 {
+    background-position: center;
   }
-  
+  .item {
+    padding: 0.5rem;
+  }
+  mat-card {
+    padding: 1.5rem;
+  }
+  ngu-carousel {
+    padding: 0;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 415px) and (max-width: 1440px) {
+  .section-title-content {
+    padding: 0 20%;
+  }
+  .carousel-jobs {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.carousel-jobs {
+  width: 1440px;
+  margin: 0 auto;
+}
+.slide-jobs {
+  padding: 1rem;
+  border: 1px solid rgb(201, 200, 200) !important;
+  border-radius: 3px;
+}

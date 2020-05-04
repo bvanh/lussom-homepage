@@ -1,5 +1,5 @@
 export class api {
-  public static API_ROOT = 'http://171.244.141.231:1337';
-  public static API_CATEGORIES = 'http://171.244.141.231:1337/categories';
-  public static API_NEWS_COUNT = 'http://171.244.141.231:1337/news/count';
+  public static API_ROOT = 'https://api.lussom.vn';
+  public static API_CATEGORIES = 'https://api.lussom.vn/categories';
+  public static API_NEWS_COUNT = 'https://api.lussom.vn/news/count';
 }

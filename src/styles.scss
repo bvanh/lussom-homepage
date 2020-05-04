@@ -33,7 +33,8 @@ $lussom-homepage-theme: mat-light-theme(
 // For more information: https://material.angular.io/guide/theming
 @import "~@angular/material/theming";
 // @import "styles-variables";
-
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @import "~bootstrap/scss/bootstrap-reboot";
 @import "~bootstrap/scss/bootstrap-grid";
 // Plus imports for other components in your app.

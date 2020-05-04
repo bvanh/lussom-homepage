@@ -5,7 +5,8 @@ import {
   ViewChild,
   ChangeDetectorRef,
 } from '@angular/core';
-import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
+// import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { JobsService } from './../../services/job.service';
 import { Jobs } from '../../../models/jobs';
 import { api } from '../../services/api';
@@ -16,18 +17,34 @@ import { api } from '../../services/api';
 })
 export class Section4Component implements OnInit {
   jobs: Jobs[];
-  slideNo = 1;
-  withAnim = true;
-  resetAnim = true;
-  @ViewChild('myCarousel') myCarousel: NguCarousel<any>;
-  carouselConfig: NguCarouselConfig = {
-    grid: { xs: 2, sm: 4, md: 4, lg: 4, all: 0 },
-    load: 3,
-    interval: { timing: 4000, initialDelay: 1000 },
+  customOptions: OwlOptions = {
     loop: true,
-    touch: true,
-    velocity: 0.2,
-    speed: 700,
+    margin: 80,
+    stagePadding:16,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: false,
+    dots: true,
+    autoplay: true,
+    // autoplaySpeed: 100,
+    // navSpeed: 100,
+
+    // navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 2,
+      },
+      740: {
+        items: 3,
+      },
+      940: {
+        items: 4,
+      },
+    },
+    // nav: true,
   };
   constructor(
     private cdr: ChangeDetectorRef,
@@ -43,9 +60,6 @@ export class Section4Component implements OnInit {
   }
   ngAfterViewInit() {
     this.cdr.detectChanges();
-  }
-  moveTo(slide) {
-    this.myCarousel.moveTo(slide, !this.withAnim);
   }
   ngOnInit(): void {
     this.getJobsFromServices(0);

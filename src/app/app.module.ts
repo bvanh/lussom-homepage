@@ -31,6 +31,7 @@ import { JobDetailComponent } from './job/job-detail/job-detail.component';
 import { ContactComponent } from './contact/contact/contact.component';
 import { ModalComponent } from './navigation/modal/modal.component';
 import { FormsModule } from '@angular/forms';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { FormsModule } from '@angular/forms';
     NgxScrollTopModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    CarouselModule
     //
   ],
   providers: [

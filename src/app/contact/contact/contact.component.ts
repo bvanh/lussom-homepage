@@ -49,7 +49,7 @@ export class ContactComponent implements OnInit {
         )
         .subscribe((data: any[]) => {});
     } else {
-      this.openDialog('Kiểm tra lại thông tin');
+      this.openDialog('Kiểm tra lại thông tin!');
     }
   }
   openDialog(errMessage): void {

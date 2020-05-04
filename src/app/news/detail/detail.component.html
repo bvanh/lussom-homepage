@@ -15,15 +15,19 @@
     <span>{{ newsDetail.created_at | date: "dd-MM-yyyy" }}</span>
     <div
       class="news-detail-thumbnail"
-      [ngStyle]="{ 'background-image': 'url(' + newsDetail.thumbnail + ')' }"
+      [ngStyle]="{
+        'background-image':
+          'url(http://171.244.141.231:1337/uploads/2e52282cc54444e2a1669511f130de29.png)'
+      }"
     ></div>
     <!-- <img [src]="newsDetail.thumbnail" /> -->
   </div>
-  <div fxFlex="67%" fxFlex.lt-md="100%">
+  <div fxFlex="70%" fxFlex.lt-md="100%">
     <div
       fxLayout="column"
       [innerHTML]="newsDetail.content"
       style="margin-top: 1rem;"
+      class="news-detail-content"
     ></div>
     <div class="tags-container">
       <span class="tags">
@@ -54,7 +58,10 @@
         <div
           class="news-relate-items"
           *ngIf="i < 4"
-          [ngStyle]="{ 'background-image': 'url(' + item.thumbnail + ')' }"
+          [ngStyle]="{
+            'background-image':
+              'url(http://171.244.141.231:1337/uploads/2e52282cc54444e2a1669511f130de29.png)'
+          }"
         >
           <h3
             (click)="getNewsFromRoute(item.id)"
@@ -67,16 +74,16 @@
             item.created_at | date: "dd-MM-yyyy"
           }}</span>
         </div>
-        <!-- <img *ngIf="i < 4" [src]="item.thumbnail" width="100%" /> -->
+        <!-- <img *ngIf="i < 4" src="http://171.244.141.231:1337/uploads/2e52282cc54444e2a1669511f130de29.png" width="100%" /> -->
         <!-- <a (click)="getNewsFromRoute(item.id)" *ngIf="i < 4">{{ item.name }}</a> -->
       </div>
     </div>
   </div>
-  <div fxFlex="29%" style="padding: 0 1rem;" fxHide.lt-md>
+  <div fxFlex="30%" style="padding: 0 1rem;" fxHide.lt-md>
     <h2>Bài viết gần đây</h2>
     <div *ngFor="let item of news">
       <div class="news-newest" fxFlex="row">
-        <img [src]="item.thumbnail" width="30%" />
+        <img ng:src="{{ item.thumbnail }}" width="30%" />
         <div
           style="
             display: flex;

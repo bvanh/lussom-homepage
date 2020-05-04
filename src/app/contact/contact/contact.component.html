@@ -32,7 +32,7 @@
     />
     <input
       [(ngModel)]="indexFeedbacks.email"
-      placeholder="Your email"
+      placeholder="Your email*"
       (keyup)="getIndexFeedbacks($event)"
       name="email"
     />
@@ -42,7 +42,7 @@
       rows="5"
       cols="50"
       (keyup)="getIndexFeedbacks($event)"
-      placeholder="Your meassage here..."
+      placeholder="Your meassage here...*"
     ></textarea>
     <button class="btn-submit-feedback" (click)="onSubmitFeedback()">
       SUBMIT
