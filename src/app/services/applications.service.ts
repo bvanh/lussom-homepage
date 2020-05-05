@@ -24,7 +24,7 @@ export class ApplicationsService {
   }
   submitCv(indexCv): Observable<applications[]> {
     return this.http
-      .post<any[]>(`${api.API_ROOT}/applications`, indexCv)
+      .post<any[]>(`${api.API_ROOT}/cvs`, indexCv)
       .pipe(catchError((error) => of([])));
   }
 }

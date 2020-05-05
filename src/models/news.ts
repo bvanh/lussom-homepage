@@ -1,6 +1,6 @@
 export class News {
   id: Number;
-  name: String;
+  title: String;
   shortContent: String;
   content: String;
   thumbNail: String;

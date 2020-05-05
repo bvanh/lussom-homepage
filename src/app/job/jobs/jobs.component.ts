@@ -32,7 +32,7 @@ export class JobsComponent implements OnInit {
     //     });
     // } else {
     this.jobsService
-      .getJobs(`${api.API_ROOT}/jobs?_limit=10&_start=${currentPage}`)
+      .getJobs(`${api.API_ROOT}/recruitments?_limit=10&_start=${currentPage}`)
       .subscribe((data: any[]) => {
         console.log(data);
         this.jobs = data;

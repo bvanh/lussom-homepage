@@ -21,7 +21,7 @@
       <h2>Jobs Description</h2>
       <div [innerHTML]="jobsDetail.description"></div>
       <h2>Your Skill and Experience</h2>
-      <div [innerHTML]="jobsDetail.skill"></div>
+      <div [innerHTML]="jobsDetail.Skill"></div>
       <div class="form-apply">
         <span class="input-cv"
           >Full name*
@@ -98,7 +98,7 @@
         routerLink="/careers/detail/{{ item.id }}"
         class="title"
       >
-        {{ item.title }}
+        {{ item.name }}
       </span>
       <span style="padding-left: 1rem; border-left: 1px solid #b5b5b5;">
         {{ item.expried | date: "dd-MM-yyyy" }}

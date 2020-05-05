@@ -9,25 +9,44 @@
     </div>
   </div>
   <div class="list-news" fxLayout="row wrap">
-    <div *ngFor="
+    <div
+      *ngFor="
         let item of news
           | paginate
             : { itemsPerPage: 10, currentPage: currentPage, totalItems: count }
-      " fxFlex.gt-xs="25%" fxFlex.lt-sm="50%" class="news-items">
-      <img src="http://171.244.141.231:1337/uploads/2e52282cc54444e2a1669511f130de29.png" width="100%" routerLink="/news/detail/{{ item.id }}" style="cursor: pointer;"/>
-      <h3 routerLink="/news/detail/{{ item.id }}" style="cursor: pointer;">{{ item.name }}</h3>
+      "
+      fxFlex.gt-xs="25%"
+      fxFlex.lt-sm="50%"
+      class="news-items"
+    >
+      <img
+        [src]="api.API_ROOT+item.thumbnail.url"
+        width="100%"
+        routerLink="/news/detail/{{ item.id }}"
+        style="cursor: pointer;"
+      />
+      <h3 routerLink="/news/detail/{{ item.id }}" style="cursor: pointer;">
+        {{ item.title }}
+      </h3>
       <p class="short-content">{{ item.shortContent }}</p>
       <div class="news-footer">
         <div class="news-footer-date" fxFlex="60%">
           {{ item.created_at | date: "dd-MM-yyyy" }}
         </div>
-        <div class="news-footer-readmore" fxFlex="40%" routerLink="/news/detail/{{ item.id }}">
+        <div
+          class="news-footer-readmore"
+          fxFlex="40%"
+          routerLink="/news/detail/{{ item.id }}"
+        >
           <img src="../../../assets/news/icon-book.png" />Read more
         </div>
       </div>
     </div>
   </div>
   <div class="pagination">
-    <pagination-controls (pageChange)="getPage($event)" class="pagination-items"></pagination-controls>
+    <pagination-controls
+      (pageChange)="getPage($event)"
+      class="pagination-items"
+    ></pagination-controls>
   </div>
 </div>

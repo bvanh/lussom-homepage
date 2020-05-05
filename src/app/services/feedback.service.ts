@@ -17,7 +17,7 @@ export class FeedbacksService {
   constructor(private http: HttpClient) {}
   submitFeedbacks(indexFeedbacks): Observable<feedbacks[]> {
     return this.http
-      .post<any[]>(`${api.API_ROOT}/feedbacks`, indexFeedbacks)
+      .post<any[]>(`${api.API_ROOT}/feedback`, indexFeedbacks)
       .pipe(
         catchError(this.handleError)
       );

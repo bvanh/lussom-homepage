@@ -22,7 +22,7 @@ export class JobDetailComponent implements OnInit {
     title: '',
     reason: '',
     description: '',
-    skill: '',
+    Skill: '',
     salary: null,
     location: '',
     experience: null,
@@ -34,11 +34,13 @@ export class JobDetailComponent implements OnInit {
     name: '',
     email: '',
     phone: '',
+    cv: File = null,
   };
   intialIndexCv = {
     name: '',
     email: '',
     phone: '',
+    cv: File = null,
   };
   fileToUpload: File = null;
   constructor(
@@ -67,7 +69,7 @@ export class JobDetailComponent implements OnInit {
   }
   getJobsFromServices(): void {
     this.jobsService
-      .getJobs(`${api.API_ROOT}/jobs?_limit=3&_start=0`)
+      .getJobs(`${api.API_ROOT}/recruitments?_limit=3&_start=0`)
       .subscribe((data: any[]) => {
         this.jobs = data;
         console.log(data);
@@ -78,8 +80,9 @@ export class JobDetailComponent implements OnInit {
     console.log(this.applications);
   }
   onFileChange(e) {
-    this.fileToUpload = e.target.files[0];
-    console.log(e.target.files[0]);
+    // this.fileToUpload = e.target.files[0];
+    this.applications = { ...this.applications, cv: e.target.files[0] };
+    console.log(this.applications);
   }
   clearInputCv(): void {
     this.applications = { ...this.intialIndexCv };
@@ -90,9 +93,9 @@ export class JobDetailComponent implements OnInit {
     const checkMail = this.checkEmail.validateEmail(email);
     const checkPhone = this.checkEmail.validatePhone(phone);
     if (checkMail && checkPhone && name !== '' && this.fileToUpload !== null) {
-      this.cvService.postFile(this.fileToUpload).subscribe((data: any[]) => {
+      // this.cvService.postFile(this.fileToUpload).subscribe((data: any[]) => {
         this.cvService
-          .submitCv({ ...this.applications, cv: data[0].url })
+          .submitCv({ ...this.applications})
           .pipe(
             tap((data) => {
               console.log(data);
@@ -108,7 +111,7 @@ export class JobDetailComponent implements OnInit {
           .subscribe((data: any[]) => {
             console.log(data);
           });
-      });
+      // });
     } else {
       this.openDialog('Kiểm tra lại thông tin!');
     }

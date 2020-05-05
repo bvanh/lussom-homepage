@@ -21,7 +21,7 @@ export class JobsService {
     return this.http.get(apiJobs).pipe(catchError((error) => of([])));
   }
   getJobsFromId(id: Number): Observable<Jobs[]> {
-    const url = `${api.API_ROOT}/jobs/${id}`;
+    const url = `${api.API_ROOT}/recruitments/${id}`;
     return this.http.get<Jobs[]>(url).pipe(
       tap((dataDetail) => {
         console.log(dataDetail);

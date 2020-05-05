@@ -21,7 +21,7 @@ export class NewsService {
     return this.http.get(apiNews).pipe(catchError((error) => of([])));
   }
   getNewsFromId(id: Number): Observable<News[]> {
-    const url = `${api.API_ROOT}/news/${id}`;
+    const url = `${api.API_ROOT}/posts/${id}`;
     return this.http.get<News[]>(url).pipe(
       tap((dataDetail) => {
         console.log(dataDetail);

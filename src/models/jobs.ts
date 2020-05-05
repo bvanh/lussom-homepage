@@ -15,8 +15,8 @@ export class applications {
   id: Number;
   name: String;
   email: String;
-  phone: String;
-  file: String;
+  phone: Number;
+  file: File;
 }
 export class feedbacks {
   id: Number;

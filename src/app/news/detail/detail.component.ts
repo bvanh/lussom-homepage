@@ -11,11 +11,15 @@ import { api } from '../../services/api';
   styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
+  api={...api}
   newsByCategories: News[];
   news:News[]
   newsDetail = {
     id: 1,
-    name: '',
+    banner:{
+      url:""
+    },
+    title: '',
     shortContent: '',
     content: '',
     thumbnail:"",
@@ -23,7 +27,7 @@ export class DetailComponent implements OnInit {
     categories: [
       {
         id: 1,
-        name:""
+        title:""
       },
     ],
   };
@@ -39,7 +43,7 @@ export class DetailComponent implements OnInit {
       this.newsService
         .getNews(`${api.API_CATEGORIES}/${data.categories[0].id}`)
         .subscribe((data: any) => {
-          this.newsByCategories = data.news;
+          this.newsByCategories = data.posts;
           console.log(data);
         });
     });
@@ -48,7 +52,7 @@ export class DetailComponent implements OnInit {
   }
   getNewsFromServices(): void {
     this.newsService
-      .getNews(`${api.API_ROOT}/news?_limit=5&_start=0`)
+      .getNews(`${api.API_ROOT}/posts?_limit=5&_start=0`)
       .subscribe((data: any[]) => {
         this.news = data;
         console.log(data)
