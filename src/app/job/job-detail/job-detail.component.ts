@@ -33,12 +33,14 @@ export class JobDetailComponent implements OnInit {
   applications = {
     name: '',
     email: '',
-    phone: Number = null,
+    phone: '',
+    cv: File = null,
   };
   intialIndexCv = {
     name: '',
     email: '',
-    phone: Number = null,
+    phone: '',
+    cv: File = null,
   };
   fileToUpload: File = null;
   constructor(
@@ -78,12 +80,9 @@ export class JobDetailComponent implements OnInit {
     console.log(this.applications);
   }
   onFileChange(e) {
-    this.fileToUpload = e.target.files[0];
-    // const formData: FormData = new FormData();
-    // formData.append('files', e.target.files[0],e.target.files[0].name);
-    // formData.append('invoiceInfo', invoiceInfo)
-    // this.applications = { ...this.applications, cv: formData };
-    console.log(this.fileToUpload);
+    // this.fileToUpload = e.target.files[0];
+    this.applications = { ...this.applications, cv: e.target.files[0] };
+    console.log(this.applications);
   }
   clearInputCv(): void {
     this.applications = { ...this.intialIndexCv };
@@ -95,27 +94,23 @@ export class JobDetailComponent implements OnInit {
     const checkPhone = this.checkEmail.validatePhone(phone);
     if (checkMail && checkPhone && name !== '' && this.fileToUpload !== null) {
       // this.cvService.postFile(this.fileToUpload).subscribe((data: any[]) => {
-      // const formData: FormData = new FormData();
-      // formData.append('files', cv, cv.name);
-      console.log(this.applications);
-      this.cvService
-        .postFile(this.applications, this.fileToUpload)
-        .pipe(
-          // tap((data) => {
-          //   console.log(data);
-          //   this.openDialog('Gửi CV thành công!');
-          //   this.applications = { ...this.intialIndexCv };
-          //   this.fileToUpload = null;
-          // }),
-          catchError((err) => {
-            console.log(err)
-            this.openDialog(err.error.message);
-            return of([]);
-          })
-        )
-        .subscribe((data: any[]) => {
-          console.log(data);
-        });
+        this.cvService
+          .submitCv({ ...this.applications})
+          .pipe(
+            tap((data) => {
+              console.log(data);
+              this.openDialog('Gửi CV thành công!');
+              this.applications = { ...this.intialIndexCv };
+              this.fileToUpload = null;
+            }),
+            catchError((err) => {
+              this.openDialog(err.error.message);
+              return of([]);
+            })
+          )
+          .subscribe((data: any[]) => {
+            console.log(data);
+          });
       // });
     } else {
       this.openDialog('Kiểm tra lại thông tin!');
