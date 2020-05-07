@@ -48,22 +48,32 @@ export class JobsComponent implements OnInit {
       return false;
     }
   }
+  checkTimestampExpried(strDate) {
+    let today = new Date().getTime();
+    let dateApply = new Date(strDate).getTime();
+    let expried = today - dateApply;
+    if (expried > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   getJobsCount(): void {
     this.jobsService
-      .getJobsCount(`${api.API_NEWS_COUNT}`)
+      .getJobsCount(`${api.API_JOBS_COUNT}`)
       .subscribe((data: any[]) => {
         this.count = data;
       });
   }
   async getPage(e) {
     if (e > this.currentPage) {
-      this.getJobsFromServices(this.positionItem + 4);
+      this.getJobsFromServices(this.positionItem + 10);
       this.currentPage = e;
-      this.positionItem += 4;
+      this.positionItem += 10;
     } else {
-      this.getJobsFromServices(this.positionItem - 4);
+      this.getJobsFromServices(this.positionItem - 10);
       this.currentPage = e;
-      this.positionItem -= 4;
+      this.positionItem -= 10;
     }
   }
   demo(e): void {

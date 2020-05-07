@@ -10,9 +10,7 @@
       >Opportunity <span style="color: #1499df;">Careers</span></span
     >
     <div class="section-title-content">
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam.'
+      Chúng tôi luôn chào đón các ứng viên có hoài bão, mong muốn được làm việc trong môi trường quốc tế chuyên nghiệp, năng động và sáng tạo. Nếu bạn có khát vọng đổi thay, đừng ngần ngại tham gia cùng chúng tôi để chinh phục những đỉnh cao mới.
     </div>
   </div>
   <owl-carousel-o [options]="customOptions" class="carousel-jobs">
@@ -20,13 +18,33 @@
       <ng-template carouselSlide [id]="slide.id">
         <!-- <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title" /> -->
         <div class="slide-jobs">
-        <h3 style="font-weight: 600;">{{ slide.name }}</h3>
-        <p>Vị trí trống: {{ slide.vacancies }}</p>
-        <p>Kinh nghiệm: {{ slide.experience }}</p>
-        <p>Bộ phận: {{ slide.categories }}</p>
-        <p>Ngày hết hạn: {{ slide.expried | date: "dd-MM-yyyy" }}</p>
-        <button mat-button class="btn-read-more-job" routerLink="/careers/detail/{{ slide.id }}">Read more >></button>
-      </div>
+          <h3 style="font-weight: 600;">{{ slide.name }}</h3>
+          <p>Vị trí trống: {{ slide.vacancies }}</p>
+          <p>Kinh nghiệm: {{ slide.experience }}</p>
+          <p>Bộ phận: {{ slide.categories }}</p>
+          <p>
+            Ngày hết hạn: {{ slide.expried | date: "dd-MM-yyyy" }}
+            <span
+              *ngIf="checkTimestamp(slide.expried)"
+              class="stick-new"
+              style="margin-top: 0.5rem;"
+              >new</span
+            >
+            <span
+              *ngIf="checkTimestampExpried(slide.expried)"
+              style="margin-top: 0.5rem;"
+              class="stick-expried"
+              >Hết hạn</span
+            >
+          </p>
+          <button
+            mat-button
+            class="btn-read-more-job"
+            routerLink="/careers/detail/{{ slide.id }}"
+          >
+            Read more >>
+          </button>
+        </div>
       </ng-template>
     </ng-container>
   </owl-carousel-o>

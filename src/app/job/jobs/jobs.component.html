@@ -66,12 +66,13 @@
         *matCellDef="let element"
         class="geeks"
         routerLink="/careers/detail/{{ element.id }}"
-        style="cursor: pointer;"
+        style="cursor: pointer"
       >
         {{ element.expried | date: "dd-MM-yyyy" }}
         <span *ngIf="checkTimestamp(element.expried)" class="stick-new"
-          >new</span
-        >
+          >new</span>
+        <span *ngIf="checkTimestampExpried(element.expried)" class="stick-expried"
+          >Hết hạn</span>
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

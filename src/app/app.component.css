@@ -13,3 +13,6 @@ mat-sidenav {
 .mat-drawer-content {
   overflow:visible;
 }
+app-layout{
+  height: 100vh;
+}

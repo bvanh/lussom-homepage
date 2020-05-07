@@ -6,22 +6,39 @@
 }
 .section2-content {
   position: absolute;
-  top: 35%;
+  top: 30%;
   width: 100%;
-  max-width: 1440px;
-  font-size: 0.9rem;
+  max-width: 90%;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
 }
-.section2-content>div>img{
+.section-content {
+  padding-right: 10%;
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 1500px) {
+  .section2-content {
+    max-width: 1440px;
+  }
+}
+.section2-content > div > img {
   position: absolute;
   width: 67%;
-  bottom: -100%;
+  bottom: -95%;
+}
+@media screen and (max-width: 768px) {
+  .section2-content > div > img {
+   bottom: -8%;
+  }
 }
 .section-title {
-  font-size: 3rem;
+  font-size: 5rem;
   font-family: "Source Sans Pro", sans-serif;
   font-style: italic;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1rem; */
 }
 .btn-read-more {
   background-color: #1a80b6;
@@ -37,7 +54,7 @@
   }
   .section2-content {
     position: absolute;
-    top: 15%;
+    top: 25%;
   }
   .section-content {
     font-size: 0.8rem;
@@ -57,14 +74,14 @@
     width: 360%;
   }
   .section2-content {
-    top: 15%;
+    top: 24%;
   }
   .section2-content-container {
     order: 3 !important;
     max-width: 90% !important;
     margin: 0 auto;
   }
-  .section2-content>div>img{
+  .section2-content > div > img {
     position: relative;
     width: 100%;
     bottom: 0;
@@ -97,22 +114,25 @@
     flex-direction: column;
   }
 }
-@media screen and (min-width: 415px) and (max-width:1440px) {
+@media screen and (min-width: 769px) and (max-width: 1440px) {
   .section2-content {
     margin: 0 auto;
     max-width: 90%;
-    top:20%;
+    top: 20%;
     align-items: center;
   }
-  .section2-content>div>img{
+  .section2-content > div > img {
     position: relative;
     width: 100%;
     bottom: 0;
     left: 10%;
   }
+  .section-title {
+    font-size: 3rem;
+  }
 }
-@media screen and (max-width:600px) {
-  .section2-content>div>img{
+@media screen and (max-width: 600px) {
+  .section2-content > div > img {
     left: 0;
   }
 }

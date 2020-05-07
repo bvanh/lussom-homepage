@@ -20,12 +20,13 @@ export class Section4Component implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
     margin: 80,
-    stagePadding:16,
+    stagePadding: 16,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
     dots: true,
     autoplay: true,
+
     // autoplaySpeed: 100,
     // navSpeed: 100,
 
@@ -34,13 +35,17 @@ export class Section4Component implements OnInit {
       0: {
         items: 1,
       },
-      400: {
-        items: 2,
+      576: {
+        items: 3,
+        margin: 30,
       },
-      740: {
+      768: {
         items: 3,
       },
-      940: {
+      1024: {
+        items: 4,
+      },
+      1280: {
         items: 4,
       },
     },
@@ -57,6 +62,27 @@ export class Section4Component implements OnInit {
         console.log(data);
         this.jobs = data;
       });
+  }
+
+  checkTimestamp(strDate) {
+    let today = new Date().getTime();
+    let dateApply = new Date(strDate).getTime();
+    let expried = today - dateApply;
+    if (expried < 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  checkTimestampExpried(strDate) {
+    let today = new Date().getTime();
+    let dateApply = new Date(strDate).getTime();
+    let expried = today - dateApply;
+    if (expried > 0) {
+      return true;
+    } else {
+      return false;
+    }
   }
   ngAfterViewInit() {
     this.cdr.detectChanges();

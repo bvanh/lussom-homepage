@@ -104,9 +104,10 @@ h3:focus {
     color: white;
     font-family: "Source Sans Pro", sans-serif;
     letter-spacing: 0.1rem;
-    font-size: 2.5rem;
+    font-size: 5rem;
     font-style: italic;
     font-weight: 900;
+    margin-bottom: 2.5rem;
   }
   & p {
     color: white;
@@ -143,6 +144,16 @@ $screen-xl-min: 1500px;
 }
 .stick-new {
   background: #ffc13c;
+  padding: 0.15rem 0.7rem;
+  border-radius: 4px;
+  margin-left: 1rem;
+  color: white;
+  @media (max-width: 1080px) {
+    margin: 0;
+  }
+}
+.stick-expried{
+  background: #b8b7b5;
   padding: 0.15rem 0.7rem;
   border-radius: 4px;
   margin-left: 1rem;

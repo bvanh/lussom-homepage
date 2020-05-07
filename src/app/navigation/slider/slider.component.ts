@@ -28,31 +28,19 @@ export class SliderComponent implements AfterViewInit {
   carouselItems = [
     {
       img: 'assets/slide1.png',
-      title: 'Game Exprience',
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+      title: 'Tầm nhìn',
+      content: `Thị trường game Việt Nam là một thị trường lớn với quy mô 215 triệu đô la, xếp số 1 Đông Nam Á và số 8 Thế Giới về lượt tải về. Nhờ vào cơ sở hạ tầng và kiến thức chuyên môn về ngành đã tích lũy được trong thời gian qua tại Việt Nam, chúng tôi tiến vào thị trường hứa hẹn này với mục tiêu kết nối, giới thiệu đến người dùng Việt Nam những sản phẩm game chất lượng cao từ khắp nơi trên thế giới. `,
     },
     {
       img: 'assets/slide1.png',
-      title: 'Game Exprience 2',
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
+      title: 'Tổ chức',
+      content: `Sở hữu nhân sự người Việt xuất thân từ các công ty game lớn tại Việt Nam có đầy đủ kinh nghiệm về phát hành game toàn cầu giúp giải quyết các khó khăn trong các lĩnh vực bản địa hóa sản phẩm game, phát hành game, tối ưu hóa doanh thu... đồng thời sở hữu mạng lưới các kênh marketing đa dạng giúp quảng bá hình ảnh sản phẩm hiệu quả nhất.`,
     },
     {
       img: 'assets/slide1.png',
-      title: 'Game Exprience 3',
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-    },
-    {
-      img: 'assets/slide1.png',
-      title: 'Game Exprience 4',
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
-    },
+      title: 'Định hướng',
+      content: `Cung cấp không chỉ các sản phẩm game chất lượng mà còn đầu tư cho các chức năng thiết yếu cho công việc phát hành, vận hành, quảng bá dịch vụ game tại Việt Nam như xác nhận và quản lý thành viên, hệ thống thanh toán nội địa đa dạng, các loại hệ thống vận hành, phân tích thống kê… nhằm tạo nên một hệ sinh thái đa dạng, khỏe mạnh trong tương lai.`,
+    }
   ];
 
   constructor(private cdr: ChangeDetectorRef) {}

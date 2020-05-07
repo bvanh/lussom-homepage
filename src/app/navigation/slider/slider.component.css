@@ -21,17 +21,21 @@
   flex-direction: column;
 }
 .slide-title {
-  font-size: 4rem;
+  font-size: 5rem;
   text-align: left;
-  width: 55%;
+  width: 100%;
   line-height: 4rem;
   font-family: "Source Sans Pro", sans-serif !important;
   font-style: italic;
   font-weight: 900;
   color: white;
+  margin-bottom: 1.5rem;
 }
 .slide-content {
   color: white;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 1px;
 }
 .dots-control {
   position: absolute;
@@ -74,10 +78,10 @@
 }
 @media (max-width: 1096px) and (min-width: 877px) {
   .slide-title {
-    width: 80%;
+    width: 85%;
   }
 }
-@media (min-width: 1097px) and (max-width: 1410px) {
+@media (min-width: 1097px) and (max-width: 1600px) {
   .slide-title {
     width: 65%;
   }
@@ -98,6 +102,9 @@
 @media screen and (max-width: 414px) {
   .slider-container {
     min-height: 45vh ;
+  }
+  .slide-content{
+    font-size: .6rem !important;
   }
   .slider-container > div > div {
     width: 75%;
