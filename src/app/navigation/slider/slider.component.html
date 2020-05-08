@@ -9,18 +9,23 @@
       <div
         fxFlex
         class="slider-container"
-        style="background-image: url(assets/slider/slide1.png);"
+        [ngStyle]="{
+          'background-image': 'url(' + item.img + ')'
+        }"
       >
         <div>
           <div>
-            <h3 class="slide-title">{{ item.title }}</h3>
-            <span class="slide-content">{{ item.content }}</span>
+            <div>
+              <h3 class="slide-title">{{ item.title }}</h3>
+              <span class="slide-content">{{ item.content }}</span>
+              <span class="slide-content-mobile">{{ item.contentMobile }}</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="dots-control" NguCarouselPoint>
-      <ul class="myPoint" >
+      <ul class="myPoint">
         <li
           *ngFor="let j of myCarousel.pointNumbers"
           [class.active]="j == myCarousel.activePoint"

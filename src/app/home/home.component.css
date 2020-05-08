@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.section-container {
+  padding: 0 0 0 10%;
+}
 .sections {
   position: relative !important;
 }
@@ -8,9 +11,9 @@ p {
 .section1 {
   position: relative;
   padding: 3rem 0 1rem 0;
-  margin: 0 auto 10rem;
+  margin: 0 auto;
   max-width: 1440px;
-  height: 50rem;
+  height: 45rem;
 }
 .shape-top {
   position: absolute;
@@ -31,13 +34,15 @@ p {
   );
 }
 .frame-img {
-  /* position: relative; */
+  display: flex;
+  align-items: center;
 }
-.frame-img > img {
+/* .frame-img > img {
   position: absolute;
   width: 75%;
   left: -20rem;
-}
+  top: -10%;
+} */
 .section-title {
   font-size: 5rem;
   font-family: "Source Sans Pro", sans-serif;
@@ -64,6 +69,12 @@ p {
   left: 45%;
   z-index: 6;
 }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .section1 {
+    width: 90%;
+    height: 65rem;
+  }
+}
 @media screen and (max-width: 767px) {
   .section1 {
     margin: 0;
@@ -74,7 +85,7 @@ p {
     padding: 0 0 3rem 0;
   }
   .section1-content {
-    font-size: .8rem;
+    font-size: 0.8rem;
     line-height: 30px;
     margin-bottom: 1rem;
   }
@@ -88,19 +99,28 @@ p {
     left: 0;
   }
 }
+@media screen and (width: 768px) {
+  .section1 {
+    height: 100%;
+  }
+  .section-container {
+    padding-left: 0% !important;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  .section-container {
+    padding-left: 5% !important;
+  }
+}
 @media screen and (min-width: 767px) and (max-width: 1440px) {
   .section1 {
     margin: 0 auto;
-    height: 35rem;
     max-width: 90%;
   }
   .section1 > div:first-child {
     padding: 0 0 3rem 0;
     display: flex;
     align-items: center;
-  }
-  .section-container{
-    padding-left: 5% !important;
   }
   .section1-content {
     font-size: 1rem;
@@ -116,6 +136,12 @@ p {
     left: 0;
   }
 }
+@media (max-width: 766px) {
+  .section-container {
+    padding: 0 5% 0 5%;
+  }
+}
+
 @media screen and (max-width: 1440px) and (min-width: 1200px) {
   .section1 {
     padding: 1rem 0 5rem 0;

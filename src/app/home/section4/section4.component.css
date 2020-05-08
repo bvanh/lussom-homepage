@@ -78,9 +78,14 @@ mat-card-content {
     font-size: 0.7rem;
   }
 }
-@media screen and (max-width: 415px) {
+/* @media screen and (max-width: 768px) and (min-width: 600px){
   .section4-title-container {
-    padding: 3rem 10% 3rem 10% !important;
+    padding: 6rem 10% 3rem 10% !important;
+  }
+} */
+@media screen and (max-width: 768px) {
+  .section4-title-container {
+    padding: 6rem 10% 3rem 10% !important;
   }
   .section-content {
     font-size: 0.8rem;
@@ -108,7 +113,7 @@ mat-card-content {
     margin: 0 auto;
   }
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1440px) and (min-width:769px) {
   .section-title-content {
     padding: 0 20%;
   }

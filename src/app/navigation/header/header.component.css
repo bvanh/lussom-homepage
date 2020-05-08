@@ -38,7 +38,7 @@ a:active {
   border-bottom: 3px solid #f9f9f9;
   outline: none;
 }
-.isNav-active>a{
+.isNav-active > a {
   color: white;
 }
 mat-toolbar {
@@ -50,6 +50,11 @@ mat-toolbar {
   display: flex;
   justify-content: space-between;
   padding: 0 !important;
+}
+@media screen and (max-width: 768px) {
+  mat-toolbar {
+    background: rgba(63, 146, 191, 0.72);
+  }
 }
 .menu {
   max-width: 88%;

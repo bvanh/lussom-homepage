@@ -13,17 +13,20 @@
   margin: 0 auto;
   height: 60rem;
 }
-@media screen and (min-width: 1600px) {
-  .section3 > div {
-    height: 56rem;
-    margin-top: 4rem;
-  }
-}
 .section3 > div > div > img {
   position: absolute;
   width: 45%;
   left: 0;
   bottom: 17%;
+}
+@media screen and (min-width: 1600px) {
+  .section3 > div {
+    height: 56rem;
+    margin-top: 4rem;
+  }
+  .section3 > div > div > img {
+    bottom: 13%;
+  }
 }
 .btn-read-more {
   background-color: #1a80b6;
@@ -48,20 +51,35 @@
 @media screen and (max-width: 768px) and (min-width: 415px) {
   .section-title {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
   .section3 {
-    padding: 0;
+    background-position: center;
+  }
+  .section3 > div {
+    height: initial;
+    margin: 0;
+  }
+  .section3 > div > div > img {
+    position: relative;
+    width: 90%;
+    left: 0;
+    bottom: 10%;
+  }
+  .section3-content-container {
+    max-width: 90% !important;
+    margin: 0 auto;
+    padding: 0 !important;
+  }
+  .btn-read-more {
+    margin-top: 0.5rem;
   }
 }
-@media screen and (max-width: 415px) {
-  .section-content {
-    font-size: 0.8rem;
-  }
+@media screen and (max-width: 414px) {
   .section-title {
     font-size: 2rem;
-    padding: 1rem;
-    margin: 0;
+    /* padding: 1rem; */
+    margin-bottom: 1.5rem;
   }
   .section3 {
     background-position: center;
@@ -73,8 +91,8 @@
   .section3 > div > div > img {
     position: relative;
     width: 100%;
-    left: 0;
-    bottom: 0;
+    left: -20%;
+    bottom: 20%;
   }
   .section3-content-container {
     max-width: 90% !important;
@@ -89,7 +107,7 @@
     padding-left: 5%;
   }
 }
-@media screen and (min-width: 415px) and (max-width: 1440px) {
+@media screen and (min-width: 769px) and (max-width: 1440px) {
   .section3 {
     height: initial;
     max-width: 90%;
@@ -111,5 +129,10 @@
 @media screen and (max-width: 1440px) and (min-width: 769px) {
   .section-title {
     font-size: 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-content {
+    margin-bottom: 1.5rem !important;
   }
 }

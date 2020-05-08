@@ -12,10 +12,15 @@
   align-items: center;
 }
 .slider-container > div {
-  max-width: 90%;
+  background: #08010100;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.slider-container > div {
   margin: 0 auto;
 }
-.slider-container > div > div {
+.slider-container > div > div > div {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -31,7 +36,8 @@
   color: white;
   margin-bottom: 1.5rem;
 }
-.slide-content {
+.slide-content,
+.slide-content-mobile {
   color: white;
   font-size: 15px;
   line-height: 1.6;
@@ -69,60 +75,79 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 20px;
+  width: 35px;
   /* transform: scale(1.2); */
 }
 .rectangle {
   position: absolute;
   bottom: 0;
 }
+@media screen and (max-width: 1440px) and (min-width: 767px) {
+  .slide-content {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  .slider-container > div {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .slider-container > div {
+    background: #0801016b;
+    width: 100%;
+  }
+  .slider-container > div>div {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .slider-container > div > div > div {
+    width: 100%;
+  }
+}
 @media (max-width: 1096px) and (min-width: 877px) {
   .slide-title {
-    width: 85%;
+    width: 100%;
   }
 }
 @media (min-width: 1097px) and (max-width: 1600px) {
-  .slide-title {
+  /* .slide-title {
     width: 65%;
-  }
-  .dots-control{
+  } */
+  .dots-control {
     bottom: 25%;
   }
 }
-@media screen and (min-width: 415px) and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .slider-container {
-    min-height: 30rem;
+    min-height: 60vh;
   }
-}
-@media screen and (max-width: 320px){
-.slider-container{
-    min-height: 60vh !important;
-}
 }
 @media screen and (max-width: 414px) {
-  .slider-container {
-    min-height: 45vh ;
-  }
-  .slide-content{
-    font-size: .6rem !important;
-  }
   .slider-container > div > div {
-    width: 75%;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+  .slide-content-mobile {
+    font-size: 0.75rem !important;
+  }
+  .slider-container > div > div > div {
+    width: 100%;
   }
   .slide-title {
     font-size: 1.7rem;
     line-height: 2rem;
     margin-bottom: 0.5rem !important;
   }
-  .dots-control{
-  bottom: 20px;
+  .dots-control {
+    bottom: 20px;
   }
   .myPoint {
     position: absolute;
     right: 5%;
     bottom: 0;
   }
-  .myPoint li{
+  .myPoint li {
     width: 10px;
     height: 10px;
   }
@@ -132,7 +157,7 @@
     min-height: 55rem;
   }
   .slider-container > div {
-    max-width: 1440px;
+    max-width: 1440px !important;
     margin: 0 auto;
   }
   .myPoint {
@@ -151,7 +176,7 @@
 }
 @media (min-width: 415px) and (max-width: 768px) {
   .slide-content {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .slide-title {
     font-size: 3rem;
@@ -162,11 +187,11 @@
     width: 100%;
     bottom: 15%;
   }
-  .myPoint{
+  .myPoint {
     width: 90%;
     margin: 0 auto;
   }
-  .myPoint li{
+  .myPoint li {
     width: 12px;
     height: 12px;
   }
@@ -183,27 +208,43 @@
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .dots-control {
-    bottom: 20%;
+    bottom: 18%;
   }
-  .myPoint li{
+  .myPoint li {
     width: 12px;
     height: 12px;
   }
 }
-@media (min-width: 1025px) and (max-width:1300px) {
+@media (min-width: 1025px) and (max-width: 1300px) {
   .dots-control {
     bottom: 25%;
   }
-  .myPoint li{
+  .myPoint li {
     width: 12px;
     height: 12px;
   }
-  .myPoint li.active{
+  .myPoint li.active {
     width: 30px;
   }
 }
 @media (min-width: 1440px) {
   .slide-content {
     width: 80%;
+  }
+}
+@media (max-width: 414px) {
+  .slide-content {
+    display: none;
+  }
+  .slide-content-mobile {
+    display: block;
+  }
+}
+@media (min-width: 415px) {
+  .slide-content {
+    display: block;
+  }
+  .slide-content-mobile {
+    display: none;
   }
 }
